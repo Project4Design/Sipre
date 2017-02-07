@@ -1,0 +1,158 @@
+html,body{
+  background-color: #e9e9e9;
+}
+.box-shadow{
+  margin-top: 15px;
+  padding: 15px 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+/*===========| Barra azul en titutlos |=============*/
+.box-shadow > .box-titles,
+.modal-header > .box-titles{
+  margin-top: -15px;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 17px;
+}
+
+.modal-header > .box-titles{
+  margin: -15px;
+  padding-right: 15px;
+}
+.box-titles{
+  color: #eee;
+  margin-bottom: 20px;
+  background: rgba(30,60,114,1);
+  background: -moz-linear-gradient(-45deg, rgba(30,60,114,1) 0%, rgba(30,60,114,1) 15%, rgba(37,72,127,1) 45%, rgba(30,60,114,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(30,60,114,1)), color-stop(15%, rgba(30,60,114,1)), color-stop(52%, rgba(37,72,127,1)), color-stop(100%, rgba(30,60,114,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(30,60,114,1) 0%, rgba(30,60,114,1) 15%, rgba(37,72,127,1) 45%, rgba(30,60,114,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(30,60,114,1) 0%, rgba(30,60,114,1) 15%, rgba(37,72,127,1) 45%, rgba(30,60,114,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(30,60,114,1) 0%, rgba(30,60,114,1) 15%, rgba(37,72,127,1) 45%, rgba(30,60,114,1) 100%);
+  background: linear-gradient(135deg, rgba(30,60,114,1) 0%, rgba(30,60,114,1) 15%, rgba(37,72,127,1) 45%, rgba(30,60,114,1) 100%);
+}
+
+.box-detalles{
+  padding: 0 20px;
+}
+
+.sub-titles{
+  color: #990F0F;
+  font-weight: 600;
+}
+
+
+/* Pegar filas a los bordes .data-table */
+.data-table th,
+.table th,
+.table-bordered th{
+  text-align: center;
+}
+.dataTables_wrapper .row:first-child,
+.dataTables_wrapper .row:last-child{
+  margin: 0;
+}
+.hide{
+  display: none;
+}
+
+/*==============| Table container |=================*/
+.table-container .table{
+  margin: 0;
+  padding: 0;
+}
+.table-container .form-group{
+  margin: 0;
+}
+/*============================================*/
+.table-container > .box-titles{
+  margin:0;
+  padding: 5px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/*====================| Botones |===========================*/
+
+.btn-poison {
+  color: #fff;
+  background-color: #AE2ECA;
+  border-color: #831C99;
+}
+.btn-poison:focus,
+.btn-poison.focus {
+  color: #fff;
+  background-color: #8C16A6;
+  border-color: #6E0984;
+}
+.btn-poison:hover {
+  color: #fff;
+  background-color: #8C16A6;
+  border-color: #6E0984;
+}
+.btn-poison:active,
+.btn-poison.active,
+.open > .dropdown-toggle.btn-poison {
+  color: #fff;
+  background-color: #8C16A6;
+  border-color: #6E0984;
+}
+.btn-poison:active:hover,
+.btn-poison.active:hover,
+.open > .dropdown-toggle.btn-poison:hover,
+.btn-poison:active:focus,
+.btn-poison.active:focus,
+.open > .dropdown-toggle.btn-poison:focus,
+.btn-poison:active.focus,
+.btn-poison.active.focus,
+.open > .dropdown-toggle.btn-poison.focus {
+  color: #fff;
+  background-color: #8C16A6;
+  border-color: #6E0984;
+}
+.btn-poison:active,
+.btn-poison.active,
+.open > .dropdown-toggle.btn-poison {
+  background-image: none;
+}
+.btn-poison.disabled:hover,
+.btn-poison[disabled]:hover,
+fieldset[disabled] .btn-poison:hover,
+.btn-poison.disabled:focus,
+.btn-poison[disabled]:focus,
+fieldset[disabled] .btn-poison:focus,
+.btn-poison.disabled.focus,
+.btn-poison[disabled].focus,
+fieldset[disabled] .btn-poison.focus {
+  background-color: #8C16A6;
+  border-color: #6E0984;
+}
+
+.perfil{
+  position: relative;
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  padding: 20px;
+  margin: 10px 25px;
+}
+/*------------------------------------------*/
+
+.hide{
+  display: none;
+}
+/*Eliminar la validacion de campos por defecto en navegadores*/
+:invalid {
+  box-shadow: none;
+}
+
+:-moz-submit-invalid {
+  box-shadow: none;
+}
+
+:-moz-ui-invalid {
+  box-shadow:none;
+}
