@@ -1,6 +1,5 @@
 <?
 $electores   = new Electores();
-$elec = $electores->obtener($id);
 if($opc=="add"){$li="Agregar";}elseif($opc=="edit"){$li="Editar";}elseif($opc=="ver"){$li="Perfil";}elseif($opc=="carga"){$li="Cargar";}elseif($opc=="consulta"){$li="Consulta";}else{$li="";}
 ?>
 
@@ -19,12 +18,17 @@ if($opc=="add"){$li="Agregar";}elseif($opc=="edit"){$li="Editar";}elseif($opc=="
 <?
 switch($opc):
   case 'ver':
+    $elec = $electores->obtener($id);
     $date = date_diff(date_create($elec->elec_nacimiento),date_create(Base::Fecha()));
     $edad = $date->format('%y');
   ?>
     <section>
       <a class="btn btn-flat btn-default" href="?ver=electores"><i class="fa fa-reply" aria-hidden="true"></i> Volver</a>
+      <a class="btn btn-flat btn-success" href="?ver=electores&opc=edit&id=<?=$elec->id_elector?>"><i class="fa fa-pencil" aria-hidden="true"></i> Editar</a>
       <a class="btn btn-flat btn-danger" href="reportes/electores.php?action=elector&id=<?=$elec->id_elector?>"><i class="fa fa-print" aria-hidden="true"></i> Imprimir ficha</a>
+      <?if($_SESSION['nivel']=="A"){?>
+        <button class="btn btn-flat btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-times" aria-hidden="true"></i> Eliminar</button>
+      <?}?>
     </section>
     <section class="perfil">
       <div class="row">
@@ -51,6 +55,7 @@ switch($opc):
           <h4>Contacto</h4>
           <p><b>Correo:</b> <a href="mailto:<?=$elec->elec_email?>" title="Enviar correo"><?=$elec->elec_email?></a></p>
           <p><b>Telefono:</b> <?=$elec->elec_telefono?></p>
+          <p><b>2do. Telefono:</b> <?=$elec->elec_telefono2?></p>
           <p><b>Facebook:</b> <?=($elec->elec_facebook)? $elec->elec_facebook:'N/A'?></p>
           <p><b>Twitter:</b>  <?=($elec->elec_twitter)? "<a href=\"http://twitter.com/{$elec->elec_twitter}\">@{$elec->elec_twitter}</a>":"N/A"?></p>
           <p><b>Instagram:</b> <?=($elec->elec_instagram)? "<a href=\"http://instagram.com/{$elec->elec_instagram}\">@{$elec->elec_instagram}</a>":"N/A"?></p>
@@ -67,10 +72,46 @@ switch($opc):
       </div>
     </section>
 
+    <div id="deleteModal" class="modal fade modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="fdelete" action="funciones/class.electores.php">
+            <input type="hidden" name="action" value="delete">
+            <input type="hidden" name="id" value="<?=$id?>">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h4 class="modal-title">Eliminar elector</h4>
+            </div>
+            <div class="modal-body">
+              <p>¿Esta seguro que desea eliminar a este elector?</p>
+
+              <div class="alert alert-dismissible" role="alert" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;<span id="msj"></span>
+              </div>
+
+              <div class="progress progress-sm active" style="display:none">
+                <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width:100%">
+                  <span class="sr-only">100% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+              <button id="b-del-item" type="submit" class="btn btn-outline b-submit">Eliminar</button>
+            </div>
+          </form>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+
   <?
   break;
   case 'add':
   case 'edit':
+    $elec = $electores->obtener($id);
     if($elec==NULL){ $id = 0; $action = "add"; $disabled="disabled"; }else{ $disabled=""; $action="edit"; }
     $sectores = new Sectores();
     $sector = $sectores->sector_consulta();
@@ -140,6 +181,18 @@ switch($opc):
               </div>
 
               <div class="form-group">
+                <label for="telefono2" class="col-md-4 control-label">2do. Teléfono: </label>
+                <div class="col-md-5">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-phone"></i>
+                    </div>
+                    <input id="telefono2" class="form-control" type="text" name="telefono2" placeholder="2do. Teléfono" data-inputmask="'mask': '(9999) 9999 99 99'" data-mask="" value="<?=($id>0)?$elec->elec_telefono2:'';?>">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label for="fecha" class="col-md-4 control-label">Fecha de nacimiento: *</label>
                 <div class="col-md-5">
                   <div class="input-group">
@@ -174,6 +227,7 @@ switch($opc):
                   </select>
                 </div>
               </div>
+              
               <div class="form-group">
                 <label for="ubicacion" class="col-md-4 control-label">Ubicación: *</label>
                 <div class="col-md-5">
@@ -184,9 +238,9 @@ switch($opc):
               </div>
 
               <div class="form-group">
-                <label for="direccion" class="col-md-4 control-label">Dirección: *</label>
+                <label for="direccion" class="col-md-4 control-label">Dirección: </label>
                 <div class="col-md-5">
-                  <input type="text" class="form-control" id="direccion" placeholder="Direccion" name="direccion" value="<?=($id>0)?$elec->elec_direccion:'';?>" required>
+                  <input type="text" class="form-control" id="direccion" placeholder="Direccion" name="direccion" value="<?=($id>0)?$elec->elec_direccion:'';?>">
                 </div>
               </div>
 
@@ -254,18 +308,29 @@ switch($opc):
         </div>
       </div>
     </div>
-
+    
     <?=Base::Js("plugins/datepicker/bootstrap-datepicker.js")?>
+    <?=Base::Js("plugins/datepicker/locales/bootstrap-datepicker.es.js")?>
+    <?=Base::Js("plugins/input-mask/jquery.inputmask.js")?>
+    <?=Base::Js("plugins/input-mask/jquery.inputmask.phone.extensions.js")?>
 
     <script>
-
       $(document).ready(function() {
-        $('#fecha').datepicker({
-          autoclose: true
-        });
-        $(".hora").timepicker({
-          showInputs: false
-        });
+        $('#nacimiento').datepicker({
+          format: "dd-mm-yyyy",
+          startDate: "-90y",
+          endDate: "-18y",
+          language: "es",
+          autoclose: true,
+          todayHighlight: true,
+          clearBtn:true
+        }).on('changeDate',function(event){
+          var today = new Date();
+          var age = Math.floor((today-event.date) / (365.25 * 24 * 60 * 60 * 1000));
+          console.log(age);
+        });//Date-picker
+
+        $("#telefono,#telefono2").inputmask("(9999) 999 99 99", {"placeholder": "(____) ___ __ __"});
       });
     </script>
   <?
@@ -299,19 +364,19 @@ switch($opc):
           <div class="box-header with-border">
             <h3 class="box-title"><i class="fa fa-file-excel-o"></i> Carga Masiva</h3>
             <div class="pull-right">
-              <a href="includes/Formato.xlsx"><i class="fa fa-download" aria-hidden="true"></i> Decargar formato</a>
+              <a href="includes/Formato.xlsx" class="btn btn-sm btn-flat btn-danger"><i class="fa fa-download" aria-hidden="true"></i> Decargar formato</a>
             </div>
           </div>
           <div class="box-body">
             <form id="f-carga" class="form-inline" action="#" enctype="multipart/formdata">
               <input type="hidden" name="action" value="preview">
               <div class="form-group">
-                <label for="file">Cargar archivo: *</label>
+                <label for="file">Seleccionar archivo: *</label>
                 <input id="file" class="form-control" type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="border:none!important">
                 <p class="help-block">Formato admitido: .xlsx</p>
               </div>
               <div class="form-group">
-                <input id="btn-cargar" class="btn btn-flat btn-primary" type="submit" value="Cargar">
+                <button id="btn-cargar" class="btn btn-flat btn-primary" type="submit" disabled><i class="fa fa-upload" aria-hidden="tue"></i> Cargar archivo</button>
               </div>
             </form>
 
@@ -342,7 +407,8 @@ switch($opc):
                   <th>Cedula</th>
                   <th>Email</th>
                   <th>Sexo</th>
-                  <th>Telefono</th>
+                  <th>Telf.</th>
+                  <th>Telf. 2</th>
                   <th>Fecha</th>
                   <th>Profesion</th>
                   <th>Sector</th>
@@ -380,16 +446,35 @@ switch($opc):
             <i class="fa fa-refresh fa-spin"></i>
           </div>
         </div>
-
       </div><!--col-md-12-->
     </div><!--Row-->
 
     <script type="text/javascript">
       $(document).ready(function(){
+
+        $('#file').change(function(e){
+          var file  = this.files[0];
+          //Tippo de archivo
+          var type  = file.type;
+          var btn   = $('#btn-cargar');
+          var alert = $('.alert');
+          if(type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"){
+            btn.prop('disabled',false);
+          }else{
+            btn.prop('disabled',true);
+            $('#file').val('');
+            alert.removeClass('alert-warning alert-success').addClass('alert-danger');
+            alert.find('#msj').text('Archivo no admitido.');
+            alert.show();
+          }
+        })
+
         $('#btn-cargar').click(function(e){
           e.preventDefault();
+          var alert = $('.alert');
           $('.overlay').show();
-          $('.alert').hide();
+
+          alert.hide();
           var form = $('#f-carga');
           var form = new FormData(form[0]);
           $.ajax({
@@ -410,12 +495,12 @@ switch($opc):
                 $('#b-reg').prop('disabled',false);
               }else{
                 $('#b-reg').prop('disabled',true);
-                $('.alert').show();
+                alert.show();
               }
-              $('.alert #msj').html(r.msj);
+              alert.find('#msj').html(r.msj);
             },
             error: function(){
-
+              alert.find('#msj').html(r.msj);
             },
             complete: function(){
               $('.overlay').hide();
@@ -479,20 +564,33 @@ switch($opc):
           </div>
           <div class="box-body">
 
-            <form id="rep-donaciones" class="" action="#" method="POST">
-              <input type="hidden" name="action" value="donaciones">
+            <form id="rep-electores" class="" action="#" method="POST">
+              <input type="hidden" name="action" value="electores">
 
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
-                    <label>Ingrese rango de fechas:</label>
+                    <label for="registro">Fecha de registro:</label>
                     <div class="input-group date">
                       <div class="input-group-addon">
                         <i class="fa fa-calendar"></i>
                       </div>
-                      <input id="fechas" class="form-control" type="text" name="fechas">
+                      <input id="registro" class="form-control" type="text" name="registro">
                     </div>
-                    <p class="help-block">Fechas en que se registron los electores.</p>
+                    <p class="help-block">Fecha en que se registron los electores.</p>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="nacimiento">Fecha de nacimiento:</label>
+                    <div class="input-group date">
+                      <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                      </div>
+                      <input id="nacimiento" class="form-control" type="text" name="nacimiento">
+                    </div>
+                    <p class="help-block">Fecha en que nacieron los electores.</p>
                   </div>
                 </div>
 
@@ -501,31 +599,11 @@ switch($opc):
                     <label for="registrado">Registrado por: </label>
                     <select id="registrado" class="form-control" name="registrado">
                       <option value="0">Todos</option>
-                      <?
-                        foreach ($users as $d){
-                      ?>
+                      <?foreach ($users as $d){?>
                         <option value="<?=$d->id_user?>"><?=$d->user_nombres." ".$d->user_apellidos?></option>
-                      <?
-                        }
-                      ?>
+                      <?}?>
                     </select>
                     <p class="help-block">Persona que registro a los electores.</p>
-                  </div>
-                </div>
-
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label for="centro">Centro de votación: </label>
-                    <select id="centro" class="form-control" name="centro">
-                      <option value="0">Todos</option>
-                      <?
-                        foreach ($centro as $d){
-                      ?>
-                        <option value="<?=$d->id_centro?>"><?=$d->cent_nombre?></option>
-                      <?
-                        }
-                      ?>
-                    </select>
                   </div>
                 </div>
               </div>
@@ -533,16 +611,24 @@ switch($opc):
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
+                    <label for="centro">Centro de votación: </label>
+                    <select id="centro" class="form-control" name="centro">
+                      <option value="0">Todos</option>
+                      <?foreach ($centro as $d){?>
+                        <option value="<?=$d->id_centro?>"><?=$d->cent_nombre?></option>
+                      <?}?>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
                     <label for="sector">Sector: </label>
                     <select id="sector" class="form-control" name="sector">
                       <option value="0">Todos</option>
-                      <?
-                        foreach ($sector as $d){
-                      ?>
+                      <?foreach ($sector as $d){?>
                         <option value="<?=$d->id_sector?>"><?=$d->sect_nombre?></option>
-                      <?
-                        }
-                      ?>
+                      <?}?>
                     </select>
                   </div>
                 </div>
@@ -552,27 +638,19 @@ switch($opc):
                     <label for="ubicacion">Ubicación:</label>
                     <select id="ubicacion" class="form-control" name="ubicacion">
                       <option value="0">Todos</option>
-                      <?
-                        foreach ($sh as $d){
-                      ?>
-                        <option value="<?=$d->id_sh?>"><?=$d->sh_nombre?></option>
-                      <?
-                        }
-                      ?>
                     </select>
                   </div>
                 </div>
+              </div>
+
+              <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label for="profesion">Profesión:</label>
-                    <select id="profesion" class="form-control" multiple="multiple" name="profesion">
-                      <?
-                        foreach ($profesion as $d){
-                      ?>
+                    <select id="profesion" class="form-control" multiple="" name="profesion[]">
+                      <?foreach ($profesion as $d){?>
                         <option value="<?=$d->profesion?>"><?=$d->profesion?></option>
-                      <?
-                        }
-                      ?>
+                      <?}?>
                     </select>
                   </div>
                 </div>
@@ -595,17 +673,119 @@ switch($opc):
             <h3 class="box-title"><i class="fa fa-question" aria-hidden="true"></i> Resultados</h3>
           </div>
           <div class="box-body">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box bg-red">
+                <span class="info-box-icon"><i class="fa fa-address-book-o" aria-hidden="true"></i></span>
+                <div class="info-box-content">
+                  <span class="info-box-text">Electores</span>
+                  <span id="total" class="info-box-number">0</span>
 
+                  <span class="progress-description">
+                    Total encontrado
+                  </span>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
+            <div class="col-md-12">
+              <table id="tabla-consulta" class="table data-table table-bordered table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Nombre</th>
+                    <th class="text-center">Apellido</th>
+                    <th class="text-center">Correo</th>
+                    <th class="text-center">Telefono</th>
+                    <th class="text-center">Sexo</th>
+                    <th class="text-center">Accion</th>
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                </tbody>
+              </table>
+            </div>
+            <div class="col-md-12">
+              <center>
+                <button id="b-print" class="btn btn-lg btn-danger btn-flat" xhref="#" disabled><i class="fa fa-print" aria-hidden="true"></i>&nbsp;Imprimir PDF</button>
+              </center>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <script type="text/javascript">
-      $("#profesion").select2({
-        placeholder: 'Profesión'
-      });
-      $('#fechas').daterangepicker();
+      $(document).ready(function(){
+        $('#b-buscar').click(function(e){
+          e.preventDefault();
+
+          var form = $('#rep-electores');
+
+          $.ajax({
+            type: 'POST',
+            cache: false,
+            url: 'funciones/class.reportes.php',
+            data: form.serialize(),
+            dataType: 'json',
+            success: function(r){
+              if(r.response){
+                $('#tbody').html();
+                $('#tabla-consulta').DataTable().destroy();
+                $('#tbody').html(r.data.table);
+                $('#total').text(r.data.total);
+                $('#b-print').attr('xhref','reportes/electores.php?action=busqueda&'+r.data.link);
+                $('#b-print').prop('disabled',false);
+                loadTable();
+              }else{
+                $('#b-print').attr('xhref','#');
+                $('#b-print').prop('disabled',true);
+                $('.alert .msj').html(r.msj);
+                $('.alert').show().delay(7000).hide('slow');  
+              }
+            },
+            error: function(){
+              $('#b-print').prop('disabled',true);
+              $('.alert').show().delay(7000).hide('slow');
+            },
+            complete: function(){
+            },
+          })
+        });//b-buscar
+
+        $('#b-print').click(function(){
+          console.log($(this).attr('xhref'));
+          window.location.href = $(this).attr('xhref');
+        });
+
+        $("#profesion").select2({
+          placeholder: 'Profesión'
+        });
+
+        var end = moment();
+
+        $('#registro,#nacimiento').daterangepicker({
+          autoUpdateInput: false,
+          maxDate: end,
+          autoApply: true,
+          linkedCalendars: false,
+          locale: {
+            format: 'DD-MM-YYYY',
+            cancelLabel: 'Cerrar',
+            applyLabel: 'Aceptar',
+            separator: " | ",
+          },
+          showDropdowns:true
+        });
+        $('#registro,#nacimiento').on('apply.daterangepicker', function(ev, picker) {
+          $(this).val(picker.startDate.format('DD-MM-YYYY') + ' | ' + picker.endDate.format('DD-MM-YYYY'));
+        });
+
+        $('#registro,#nacimiento').on('cancel.daterangepicker', function(ev, picker) {
+          $(this).val('');
+        });
+      });//Ready
+
     </script>
   <?
   break;
@@ -665,8 +845,8 @@ switch($opc):
         <h3 class="box-title"><i class="fa fa-address-book-o"></i> Electores registrados</h3>
         <div class="pull-right">
           <a class="btn btn-flat btn-sm btn-success" href="?ver=electores&opc=add"><i class="fa fa-user-plus" aria-hidden="true"></i> Agregar Elector</a>
-          <a class="btn btn-flat btn-sm btn-warning" href="?ver=electores&opc=carga"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Carga Masiva</a>
-          <a class="btn btn-flat btn-sm btn-danger" href="reportes/electores.php?action=electores_pdf"><i class="fa fa-print" aria-hidden="true"></i> Imprimir listado</a>
+          <a class="btn btn-flat btn-sm btn-danger" href="reportes/electores.php?action=electores"><i class="fa fa-print" aria-hidden="true"></i> Imprimir listado</a>
+          <a class="btn btn-flat btn-sm btn-info" href="?ver=electores&opc=cargar"><i class="fa fa-file-excel-o" aria-hidden="true"></i> Carga Masiva</a>
         </div>
       </div>
       <div class="box-body">
@@ -677,6 +857,7 @@ switch($opc):
               <th class="text-center">Nombre</th>
               <th class="text-center">Apellido</th>
               <th class="text-center">Cedula</th>
+              <th class="text-center">Telefono</th>
               <th class="text-center">Email</th>
               <th class="text-center">Accion</th>
             </tr>
@@ -690,10 +871,10 @@ switch($opc):
               <td><?=$d->elec_nombres?></td>
               <td><?=$d->elec_apellidos?></td>
               <td><?=$d->elec_cedula?></td>
+              <td><?=$d->elec_telefono?></td>
               <td><?=$d->elec_email?></td>
               <td class="text-center">
                 <a class="btn btn-flat btn-primary btn-sm" href="?ver=electores&opc=ver&id=<?=$d->id_elector?>"><i class="fa fa-search"></i></a>
-                <a class="btn btn-flat btn-success btn-sm" href="?ver=electores&opc=edit&id=<?=$d->id_elector?>"><i class="fa fa-pencil"></i></a>
                 <a class="btn btn-flat btn-danger btn-sm" href="reportes/electores.php?action=elector&id=<?=$d->id_elector?>"><i class="fa fa-print"></i></a>
               </td>
             </tr>
@@ -743,14 +924,12 @@ if($opc=="add"||$opc=="edit"||$opc=="consulta"){
             $("#ubicacion").prop("disabled", true);
           },
           complete: function(){
-
           }
         });
-      });
+      });//Ready
 
       $('#sector').change();
     });
-
     function loadSelect(){
       $('#ubicacion').trigger('change.select2');
       $("#ubicacion").prop("disabled", false);

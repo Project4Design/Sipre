@@ -85,7 +85,6 @@ isset($_SESSION['id']) ? session_destroy() : '';
           data: $('#form-login').serialize(),
           dataType: 'json',
           success: function(r){
-            console.log(r);
             if(r.response){
               $('.alert').removeClass('alert-danger').addClass('alert-success');
               window.location.replace(r.redirect);

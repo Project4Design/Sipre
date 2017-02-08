@@ -57,6 +57,7 @@ switch($opc):
           <h4>Datos del usuario</h4>
           <p><b>Nombres:</b> <?=$user->user_nombres?></p>
           <p><b>Apellidos:</b> <?=$user->user_apellidos?></p>
+          <p><b>Cedula:</b> <?=$user->user_cedula?></p>
           <p><b>Correo:</b> <?=$user->user_email?></p>
           <p><b>Sexo:</b> <?=($user->user_sexo=="M")?'Masculino':'Femenino'?></p>
           <p><b>Telefono:</b> <?=$user->user_telefono?></p>
@@ -64,7 +65,7 @@ switch($opc):
 
         <div class="col-md-4">
           <h4>&nbsp;</h4>
-          <p><b>Nivel:</b> <?=($user->user_nivel=="A")?'Administrador':'Usuario'?></p>
+          <p><b>Nivel:</b> <?=($user->user_nivel=="A")?'Administrador':'Colaborador'?></p>
           <p><b>Estado:</b> <span id="estado" style="color:<?=$color?>"><?=$estado?></span></p>
         </div>
       </div>
@@ -80,7 +81,7 @@ switch($opc):
             <span class="info-box-number"><?=count($elector)?></span>
 
             <span class="progress-description">
-              Agregados
+              Registrados
             </span>
           </div>
           <!-- /.info-box-content -->
@@ -427,28 +428,6 @@ switch($opc):
             <form class="form-horizontal" action="funciones/class.usuarios.php" id="fr-registro" method="post">
               <input id="action" type="hidden" name="action" value="<?=$action?>">
               <input id="id" type="hidden" name="id" value="<?=($id>0)?$id:'0';?>">
-
-              <div class="form-group">
-                <label for="estado" class="col-md-4 control-label">Estado: *</label>
-                <div class="col-md-3">
-                  <select id="estado" class="form-control" name="estado" required>
-                    <option value="">Seleccione...</option>
-                    <option value="A" <?if($id>0){echo ($user->user_estado=="A")?'selected':'';} ?>>Activo</option>
-                    <option value="I" <?if($id>0){echo ($user->user_estado=="I")?'selected':'';} ?>>Inactivo</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div class="form-group">
-                <label for="nivel" class="col-md-4 control-label">Nivel: *</label>
-                <div class="col-md-3">
-                  <select id="nivel" class="form-control" name="nivel" required>
-                    <option value="">Seleccione...</option>
-                    <option value="C" <?if($id>0){echo ($user->user_nivel=="C")?'selected':'';} ?>>Colaborador</option>
-                    <option value="A" <?if($id>0){echo ($user->user_nivel=="A")?'selected':'';} ?>>Administrador</option>
-                  </select>
-                </div>
-              </div>
 
               <div class="form-group">
                 <label for="cedula" class="col-md-4 control-label">Cedula: *</label>

@@ -37,6 +37,8 @@ if($_SESSION['user_sexo']=='M'){ $ClassSex="fa fa-user";}else{ $ClassSex= "fa fa
 
     <!-- Datatable -->
     <?=Base::Css("plugins/datatables/dataTables.bootstrap.css")?>
+    <!-- Datepicker -->
+    <?=Base::Css("plugins/datepicker/datepicker.min.css")?>
 
     <?=Base::Js("includes/js/jquery-2.2.1.min.js")?>
     <?=Base::Js("includes/js/bootstrap.js")?>
@@ -62,9 +64,9 @@ if($_SESSION['user_sexo']=='M'){ $ClassSex="fa fa-user";}else{ $ClassSex= "fa fa
       <header class="main-header">
         <!-- Logo -->
         <a href="inicio.php" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels --><!--
-          <span class="logo-mini"><b>P</b>TILLA</span>
-          -->
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>S</b></span>
+          
           <!-- logo for regular state and mobile devices -->
           <span class="logo-lg"><b>SIPRE</b></span>
         </a>
@@ -81,32 +83,32 @@ if($_SESSION['user_sexo']=='M'){ $ClassSex="fa fa-user";}else{ $ClassSex= "fa fa
               <!-- Messages: style can be found in dropdown.less-->
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-              <span><?=$_SESSION['nombre']?></span>
-            </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <!--<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
-                <p>
-                  <?=$_SESSION['email']?><br>
-                  <strong>Cedula: </strong><?=$_SESSION['cedula']?><br>
-                  <strong><?=$nivel?></strong>
-                </p>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <!-- <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+                  <span><?=$_SESSION['nombre']?></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <!--<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">-->
+                    <p>
+                      <?=$_SESSION['email']?><br>
+                      <strong>Cedula: </strong><?=$_SESSION['cedula']?><br>
+                      <strong><?=$nivel?></strong>
+                    </p>
+                  </li>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="?ver=perfil" class="btn btn-default btn-flat"><i class="<?=$ClassSex?>" aria-hidden="true"></i> Mi Perfil</a>
+                    </div>
+                    <div class="pull-right">
+                      <a id="b-logout" href="#" class="btn btn-default btn-flat"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a>
+                    </div>
+                  </li>
+                </ul>
               </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="?ver=perfil" class="btn btn-default btn-flat"><i class="<?=$ClassSex?>" aria-hidden="true"></i> Mi Perfil</a>
-                </div>
-                <div class="pull-right">
-                  <a id="b-logout" href="#" class="btn btn-default btn-flat"><i class="fa fa-sign-out" aria-hidden="true"></i> Salir</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
+              <!-- Control Sidebar Toggle Button -->
             </ul>
           </div>
         </nav>
@@ -120,6 +122,14 @@ if($_SESSION['user_sexo']=='M'){ $ClassSex="fa fa-user";}else{ $ClassSex= "fa fa
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">MENU</li>
+
+            <li>
+              <a href="inicio.php">
+                <i class="fa fa-home" aria-hidden="true"></i>
+                <span>Inicio</span>
+              </a>
+            </li>
+
             <? if($_SESSION['nivel'] == "A"): ?>
             <li class="treeview <?=($inicio=="usuarios")?'active':'';?>">
               <a href="#">
@@ -148,16 +158,11 @@ if($_SESSION['user_sexo']=='M'){ $ClassSex="fa fa-user";}else{ $ClassSex= "fa fa
               </ul>
             </li>
 
-            <li class="treeview <?=($inicio=="centros")?'active':'';?>">
-              <a href="#">
+            <li class="<?=($inicio=="centros")?'active':'';?>">
+              <a href="?ver=centros">
                 <i class="fa fa-home" aria-hidden="true"></i>
                 <span>Centros de votacion</span>
-                <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu menu-open">
-                <li><a href="?ver=centros"><i class="fa fa-circle-o"></i>Ver Centros</a></li>
-                <li><a href="?ver=centros&opc=add"><i class="fa fa-circle-o"></i>Agregar Centros</a></li>
-              </ul>
             </li>
 
             <li class="<?=($inicio=="sectores")?'active':'';?>">

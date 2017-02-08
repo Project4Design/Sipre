@@ -69,7 +69,7 @@ class Pdf_sectores{
 
       $body="<hr>
         <div class=\"row\">
-          <h4 class=\"center\">informacion {$sector->sect_nombre}</h4>
+          <h4 class=\"center\">informacion - {$sector->sect_nombre}</h4>
           <div class=\"col4\">
             <b>Ubicaicones: </b>".count($ubicaciones)."
           </div>
@@ -151,7 +151,7 @@ class Pdf_sectores{
 
       $body="<hr>
         <div class=\"row\">
-          <h4 class=\"center\">informacion {$sh->sh_nombre}</h4>
+          <h4 class=\"center\">informacion - {$sh->sh_nombre}</h4>
           <div class=\"col4\">
             <b>Electores: </b>".count($elector)."
           </div>
@@ -202,7 +202,7 @@ class Pdf_sectores{
     $sectortop = $this->sectores->sector_electores();
 
     if(count($sectortop)>0){
-      $nombre = "sectores";
+      $nombre = "Sectores";
       $tbody = ""; $i = 1;
       
       foreach ($sectortop->data as $d) {
@@ -263,7 +263,7 @@ class Pdf_sectores{
     $sh = $this->sectores->sh_consulta();
 
     if(count($sh)>0){
-      $nombre = "ubicaciones";
+      $nombre = "Ubicaciones";
       $tbody = ""; $i = 1;
       
       foreach ($sh->data as $d) {

@@ -1,0 +1,766 @@
+
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, 20332343, 'Nombre', '', '', 'M', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_apellidos' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:06 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:07 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:09 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:10 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:11 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 11:27:12 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(89): mysqli_stmt->execute()
+#1 C:\xampp\htdocs\sipre\funciones\class.electores.php(98): Query::prun('INSERT INTO ele...', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.electores.php(282): Electores->add(0, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#3 C:\xampp\htdocs\sipre\funciones\class.electores.php(383): Electores->cargar()
+#4 {main}
+Column 'elec_nombres' cannot be null
+[Wed, 08 Feb 2017 15:21:08 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(79): mysqli->prepare('SELECT e.* , s....')
+#1 C:\xampp\htdocs\sipre\funciones\class.reportes.php(147): Query::prun('SELECT e.* , s....', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.reportes.php(215): Reportes->electores(Array, Array, '1', '2', '8', '', Array)
+#3 {main}
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '|| e.elec_profesion = ?)' at line 4
+[Wed, 08 Feb 2017 15:21:21 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(79): mysqli->prepare('SELECT e.* , s....')
+#1 C:\xampp\htdocs\sipre\funciones\class.reportes.php(147): Query::prun('SELECT e.* , s....', Array)
+#2 C:\xampp\htdocs\sipre\funciones\class.reportes.php(215): Reportes->electores(Array, Array, '1', '2', '8', '', Array)
+#3 {main}
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '|| e.elec_profesion = ?)' at line 4
+[Wed, 08 Feb 2017 16:12:43 -0430] #0 C:\xampp\htdocs\sipre\funciones\conex.php(79): mysqli->prepare('SELECT e.* , s....')
+#1 C:\xampp\htdocs\sipre\reportes\electores.php(138): Query::prun('SELECT e.* , s....', Array)
+#2 C:\xampp\htdocs\sipre\reportes\electores.php(388): Pdf_electores->busqueda(Array, Array, 0, '17', '8', '28', Array)
+#3 {main}
+You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '|| e.elec_profesion = ?)' at line 4

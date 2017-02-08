@@ -58,8 +58,11 @@ class Base
 	//Transformar fecha formato ingles a español
 	public static function Convert($data)
 	{
-		$x = explode("-", $data);
-		return $x[2]."-".$x[1]."-".$x[0];
+		if($data){
+			$x = explode("-", $data);
+			$data = $x[2]."-".$x[1]."-".$x[0];
+		}
+		return $data;
 	}
 
 	//Transformar timestamp ingles a español

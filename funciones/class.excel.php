@@ -16,8 +16,9 @@ class Excel{
 		$objPHPExcel = $this->excel->load($this->path);
 		$objWorksheet = $objPHPExcel->getActiveSheet();
 
-		//Iterador
-		$i = 0; $data = "";
+		$i = 0; //Iterador
+		$data = ""; //Tabla
+		$required = [0,1,2,3,4,5,7,8,9,10,12]; //Campos requeridos
 		foreach ($objWorksheet->getRowIterator() as $row) {
 
 			//Saltar la primera fila que seria el titulo.
@@ -26,10 +27,22 @@ class Excel{
 			  $cellIterator->setIterateOnlyExistingCells(false);
 
 			  $data .= "<tr><td>{$i}</td>";
+			  //Contador para la fecha
+			  $x = 0;
 			  foreach ($cellIterator as $cell) {
-			    $data .= "<td>" . $cell->getValue() . "</td>";
+			  	if(in_array($x,$required)&&($cell->getValue()==NULL||$cell->getValue()=="")){
+			  		$data .= "<td><span style='color:red'>Requerido</span></td>";
+			  	}else{
+				  	if($x==7){
+				  		//Tranformar fecha de formato excel a formato normal
+				  		$fecha = ($cell->getValue()!=NULL||$cell->getValue()!="")?gmdate("Y-m-d",($cell->getValue() - 25569) * 86400) : '-';
+				  		$data .= "<td>" . $fecha . "</td>";
+				  	}else{
+				    	$data .= "<td>" . $cell->getValue() . "</td>";
+				  	}
+				  }
+			  	$x++;
 			  }
-
 			  $data .= "</tr>";
 			}
 			$i++;

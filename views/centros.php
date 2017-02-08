@@ -174,16 +174,16 @@ switch($opc):
           <div class="box-body">
             <form class="form-horizontal" action="funciones/class.centros.php" id="fr-registro" method="post">
               <input id="action" type="hidden" name="action" value="<?=$action?>">
-              <input id="id" type="hidden" name="id" value="<?=($id>0)?$id:'0';?>">
-
- 
+              <input id="id" type="hidden" name="id" value="<?=($id>0)?$id:'0';?>"> 
+              
               <div class="form-group">
                 <label for="cent_nombre" class="col-md-4 control-label">Nombre: *</label>
                 <div class="col-md-5">
                   <input type="text" class="form-control" id="cent_nombre" name="cent_nombre" placeholder="Nombres" value="<?=($id>0)?$cen->cent_nombre:'';?>" maxlength="250" required>
                 </div>
               </div>
-          <div class="col-md-5 col-md-offset-4">
+              
+              <div class="col-md-5 col-md-offset-4">
                 <p class="help-block" style="color:red">* Campos requeridos</p>
 
                 <div class="progress" style="display:none">

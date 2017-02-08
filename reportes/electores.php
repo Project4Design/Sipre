@@ -14,52 +14,47 @@ class Pdf_electores{
     $this->fecha = Base::Fecha("d-m-Y");
   }
 
-  public function busqueda($fechas,$sel,$ext,$tipos)
+  public function busqueda($registro,$nacimiento,$registrado,$centro,$sector,$ubicacion,$profesion)
   {
-
-    $data = (object) array();
-    $error = false;
-    $tbody = $arguments = $params = "";
-    $data->total = $data->f = $data->m = $x = $i = 0;
-     
-    if($fechas[0] == "" && $fechas[1] == "" && $sel == 0 && $ext == 0 && $tipos == NULL){
+    $table = $arguments = $params = "";
+    $total = $x = $i = 0;
+    //===================================|| CONSTRUYENDO LA QUERY DE BUSQUEDA ||=================================================
+    if($registro[0] == "" && $registro[1] == "" && $nacimiento[0] == "" && $nacimiento[1] == "" && $registrado == 0 && $centro == 0 && $sector == 0 && $ubicacion == 0 && $profesion == NULL){
       $where = "";
     }else{
       $where = "WHERE ";
     }
 
-    if($ext != 0){
-      $extractor = $user->obtener($ext);
-      $arguments .= $ext;
+    if($registrado > 0){
+      $arguments .= $registrado;
       $params .= "i";
-      $where .= " dn.dn_extractor = ? ";
+      $where .= " e.id_user = ? ";
       $x++;
     }
 
-    if($sel != 0){
-      $selector = $user->obtener($ext);
+    if($centro > 0){
       $pre = ($x > 0)? ",":" ";
-      $arguments .= $pre.$sel;
+      $arguments .= $pre.$centro;
       $params .= "i";
-      $where .= ($x > 0)? " AND dn.dn_seleccionador = ?" : " dn.dn_seleccionador = ? ";
+      $where .= ($x > 0)?" AND c.id_centro = ?" : " c.id_centro = ? ";
       $x++;
     }
 
-    if($fechas[0] != "" || $fechas[1] != ""){
+    if($registro[0] != "" || $registro[1] != ""){
       $pre = ($x > 0) ? " AND " : " ";
-      $fecha = $pre." (dn.dn_fecha_reg BETWEEN ? AND ?) ";
+      $fecha = $pre." (e.elec_fecha_reg BETWEEN ? AND ?) ";
       $params .="ss";
       $where .= $fecha;
 
-      foreach ($fechas as $k => $v) {
-        if($fechas[0] != ""){
-          $inicio = Base::Convert($fechas[0]);
+      foreach ($registro as $k => $v) {
+        if($registro[0] != ""){
+          $inicio = Base::Convert($registro[0]);
         }else{
           $inicio = Base::Fecha();
         }
 
-        if($fechas[1] != ""){
-          $fin = Base::Convert($fechas[1]);
+        if($registro[1] != ""){
+          $fin = Base::Convert($registro[1]);
         }else{
           $fin = Base::Fecha();
         }
@@ -70,134 +65,175 @@ class Pdf_electores{
       $x++;
     }
 
-    $ctipo = count($tipos); $i = 0;
-    if($ctipo > 0){
+    if($nacimiento[0] != "" || $nacimiento[1] != ""){
       $pre = ($x > 0) ? " AND " : " ";
-      $tipo = $pre." ( ";
+      $fecha = $pre." (e.elec_nacimiento BETWEEN ? AND ?) ";
+      $params .="ss";
+      $where .= $fecha;
 
-      foreach($tipos as $k => $v){
-        if($i>0){
-          $tipo .= " OR dn.dn_tipo = ? ";
+      foreach ($nacimiento as $k => $v) {
+        if($nacimiento[0] != ""){
+          $inicio = Base::Convert($nacimiento[0]);
         }else{
-          $tipo .= " dn.dn_tipo = ? ";
+          $inicio = Base::Fecha();
         }
 
-        $arguments .= ($x > 0) ? ",".$v : $v;
-        $params .= "s";
-        $x++;
-        $i++;
+        if($nacimiento[1] != ""){
+          $fin = Base::Convert($nacimiento[1]);
+        }else{
+          $fin = Base::Fecha();
+        }
       }
 
-      $tipo .= ") ";
-      $where .= $tipo;
+      $arguments  .= ($x > 0)? "," : "";
+      $arguments  .= $inicio.",".$fin;
+      $x++;
     }
 
+    
+    if($sector > 0){
+      $pre = ($x > 0)? ",":" ";
+      $arguments .= $pre.$sector;
+      $params .= "i";
+      $where .= ($x > 0)?" AND s.id_sector = ?" : " s.id_sector = ? ";
+      $x++;
+    }
+
+    if($ubicacion > 0){
+      $pre = ($x > 0)? ",":"";
+      $arguments .= $pre.$ubicacion;
+      $params .= "i";
+      $where .= ($x > 0)?" AND sh.id_sh = ?" : " sh.id_sh = ? ";
+      $x++;
+    }
+
+    if($profesion){
+      $pre = ($x > 0) ? " AND (" : " (";
+      $preQuery = ""; $j = 0;
+      foreach ($profesion as $k => $v) {
+        $preQuery .= ($j > 0) ? " || e.elec_profesion = ?" : " e.elec_profesion = ?";
+        $preArg = ($x > 0)? ",":"";
+        $arguments .= $preArg.$v;
+
+        $params .= "s";
+        $x++; $j++;
+      }
+
+      $where .= $pre.$preQuery.")";
+    }
+
+    
     if($params == "" && $arguments == ""){
       $cadena = NULL;
     }else{
       $params .= ",".$arguments;
       $cadena = explode(",",$params);
     }
+    
 
-    $query = Query::prun("SELECT dn.*,don.id_donante,don.elec_sexo AS sexo,don.elec_nombres,don.elec_apellidos
-                                  FROM donantes AS dn
-                                  INNER JOIN donantes AS don ON don.id_donante = dn.id_donante
-                                    $where",$cadena);
+    $query = Query::prun("SELECT e.* , s.* , sh.* , c.* FROM electores AS e 
+                INNER JOIN sectores AS s ON s.id_sector = e.id_sector 
+                INNER JOIN sectores_hijos AS sh ON sh.id_sh = e.id_sh 
+                INNER JOIN centros AS c ON c.id_centro=e.id_centro $where",$cadena);
 
     if($query->response){
       if($query->result->num_rows > 0){
+
+        if($sector>0||$ubicacion>0){ $s = new Sectores(); }
         $i = 1;
-        while ($don = $query->result->fetch_array(MYSQLI_ASSOC)) {
-          $data->total ++;
+        //Bu
+        while ($elec = $query->result->fetch_array(MYSQLI_ASSOC)) {
+          $total ++;
 
-          if($don["sexo"] == "M"){
-            $data->m++;
-          }else{
-            $data->f++;
-          }
-
-          $tbody .="<tr>
-                    <td class=\"center\">".$i."</td>
-                    <td class=\"center\">".$don["id_donante"]."</td>
-                    <td>".$don["elec_nombres"]." ".$don["elec_apellidos"]."</td>
-                    <td class=\"center\">".$don["dn_tipo"]."</td>
-                    <td class=\"center\">".$don["dn_segmento"]."</td>
-                    <td class=\"center\">".Base::Convert($don["dn_fecha_reg"])."</td>
-                  </tr>";
+          $table .="<tr>
+                      <td class=\"text-center\">".$i."</td>
+                      <td>".$elec['sh_nombre']."</td>
+                      <td>".$elec['elec_nombres']."</td>
+                      <td>".$elec['elec_apellidos']."</td>
+                      <td>".$elec['elec_cedula']."</td>
+                      <td>".$elec['elec_telefono']."</td>
+                      <td>".$elec['elec_email']."</td>
+                    </tr>";
           $i++;
         }
-      }else{
-        $tbody = "<tr><td colspan=\"6\">No se encontraron resultados</td></tr>";
-      }
-    }else{
-      $error = true;
-    }
-      
-    if(!$error){
-      $body ='
+        $body ='
           <p>Fecha: '.Base::Convert(Base::Fecha()).'</p>
           <hr>
           <div class="col12">';
+          if($registro>0){
+            $re = new Usuarios(); $us = $re->obtener($registro);
+            $body .= '<p><b>Registro por: </b> '.$us->user_nombres.' '.$us->user_apellidos.'</p>';
+          }
+          if($registro[0] != "" || $registro[1] != ""){
+            $body .= '<p><b>Fecha de registro: </b> '.$registro[0].' - '.$registro[1].'</p>';
+          }
+          if($nacimiento[0] != "" || $nacimiento[1] != ""){
+            $body .= '<p><b>Fecha de nacimiento: </b> '.$nacimiento[0].' - '.$nacimiento[1].'</p>';
+          }
+          if($sector > 0){
+            $sect = $s->sector_obtener($sector);
+            $body .= '<p><b>Sector: </b>'.$sect->sect_nombre.'</p>';
+          }
+          if($ubicacion > 0){
+            $ubc = $s->sh_obtener($ubicacion);
+            $body .= '<p><b>Ubicación: </b>'.$ubc->sh_nombre.'</p>';
+          }
+          if($centro > 0){
+            $c = new Centros(); $cent = $c->obtener($centro);
+            $body .= '<p><b>Centro: </b>'.$cent->cent_nombre.'</p>';
+          }
+          if($profesion){
+            $body .= '<p><b>Profesión: </b>'; $j = 0;
+            foreach ($profesion as $k => $v) {
+              $pre = ($j>0)?', ':'';
+              $body.= $pre.$v;
+              $j++;
+            }
+            $body.='</p>';
+          }
 
-    if($sel != 0){
-      $body .=
-      '<p><b>Seleccionador: </b>'.$selector->user_nombres.' '.$selector->user_apellidos.'</p>';
-    }
-    if($ext != 0){
-      $body .=
-      '<p><b>Seleccionador: </b>'.$extractor->user_nombres.' '.$extractor->user_apellidos.'</p>';
-    }
-    if($fechas[0] != "" || $fechas[1] != ""){
-      $body .=
-      '<p><b>Rango de fechas: </b> '.$fechas[0].' - '.$fechas[1].'</p>';
-    }
 
-    if($ctipo > 0){
-     $body .=
-      '<p><b>Tipos de donante: </b>';
-      $i = 0;
 
-      foreach($tipos as $k => $v){
-        if($i>0){
-          $body .= ", ".$v;
-        }else{
-          $body .= $v;
-        }
-        $i++;
+
+
+
+        $body .= '</div>'; //Cerrando col12 de parametros de busqueda
+
+        $body .='
+          <h3 class="center">Listado de Electores</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center">#</th>
+                <th class="text-center">Ubicación</th>
+                <th class="text-center">Nombres</th>
+                <th class="text-center">Apellidos</th>
+                <th class="text-center">Cedula</th>
+                <th class="text-center">Teléfono</th>
+                <th class="text-center">Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              '.$table.'
+            </tbody>
+          </table>';
+      }else{
+        $body   = "<center> <h1>No se encontraron electores.</h1></cener>";
       }
-      $body .= "</p>";
+    }else{
+      $body   = "<center> <h1>Ha ocurrido un error.</h1></cener>";
     }
 
-    $body.=
-      '</div>
-      <h3 class="center">Listado de donantes</h3>
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="text-center">#</th>
-            <th class="text-center">Historia</th>
-            <th class="text-center">Donante</th>
-            <th class="text-center">Tipo</th>
-            <th class="text-center">Segmento</th>
-            <th class="text-center">Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          '.$tbody.'
-        </tbody>
-      </table>';
-
-    }else{
-      $body = "<center> <h1>Ha ocurrido un error.</h1></cener>";
-    }//Si existe un error
-
-    $header = "<div class=\"col3\"><h1>Santa<br>Rosalía</h1></div>";
-    $header .= "<div class=\"col6\"><p class=\"center\"><b>RIF. J-30818309-1 - Telf: 0246-431.84.53</b><br>San Juan de los Morros - Estado Guárico<br><h3 class=\"center\" style=\"margin-top:0\">BANCO DE SANGRE</h3></p></div>";
-    $footer = "<div class=\"center\">Santa Rosalia - San Juan de los Morros - Estado Guárico</div>";
+    $header = "<div class=\"col9\">
+                <p class=\"right\">Base de Datos Muicipio Sucre - Edo. Aragua
+                </p>
+              </div>";
+    $footer = "<div class=\"center\">La Información en este documento es de uso confidencial.</div>";
 
     $output = $this->pdf->build($body,$header,$footer);
-    $this->pdf->out($output);
-  }//Busqueda
+    ob_clean();
+    $this->pdf->out($output,"Electores");
+  }//Consulta
 
   public function elector($id)
   {
@@ -224,7 +260,8 @@ class Pdf_electores{
       <div class=\"row\">
         <h3>Contacto</h3>
         <p><b>Correo:</b> {$elector->elec_email}</p>
-        <p><b>Telefono:</b> {$elector->elec_telefono}</p>
+        <p><b>Teléfono:</b> {$elector->elec_telefono}</p>
+        <p><b>2do. Teléfono:</b> {$elector->elec_telefono2}</p>
 
         <p><b>Facebook:</b>";
         if($elector->elec_facebook){ $body .= $elector->elec_facebook; }else{ $body .="N/A"; }
@@ -268,17 +305,17 @@ class Pdf_electores{
 
     $output = $this->pdf->build($body,$header,$footer);
     $this->pdf->out($output,$nombre);
-  }//Donante
+  }//Elector
 
   public function electores()
   {
-    $elector = $this->elect->consulta();
+    $electores = $this->elect->consulta();
 
     if(count($electores)>0){
       $nombre = "electores";
       $tbody = ""; $i = 1;
       
-      foreach ($elector as $d){
+      foreach ($electores as $d){
         $tbody .="
         <tr>
           <td class=\"center\">{$i}</td>
@@ -327,6 +364,7 @@ class Pdf_electores{
     $footer = "<div class=\"center\">La Información en este documento es de uso confidencial.</div>";
 
     $output = $this->pdf->build($body,$header,$footer);
+    ob_clean();
     $this->pdf->out($output,$nombre);
   }//Electores
 
@@ -337,19 +375,22 @@ $pdf = new Pdf_electores();
 if(isset($_GET['action'])):
   switch ($_GET['action']):
     case 'busqueda':
-      if(isset($_GET['fechas'])){ $fechas = $_GET['fechas']; }else{ $fechas = array("",""); }
-      if(isset($_GET['selector'])){ $sel = $_GET['selector']; }else{ $sel = 0; }
-      if(isset($_GET['extractor'])){ $ext = $_GET['extractor']; }else{ $ext = 0; }
-      if(isset($_GET['tipos'])){ $tipos = $_GET['tipos']; }else{ $tipos = NULL; }
+      $registro    = isset($_GET['registro'])?$_GET['registro']:array("","");
+      $nacimiento  = isset($_GET['nacimiento'])?$_GET['nacimiento']:array("","");
+      $registrado  = isset($_GET['registrado'])?$_GET['registrado']:0;
+      $centro      = isset($_GET['centro'])?$_GET['centro']:0;
+      $sector      = isset($_GET['sector'])?$_GET['sector']:0;
+      $ubicacion   = isset($_GET['ubicacion'])?$_GET['ubicacion']:0;
+      $profesion   = isset($_GET['profesion'])?$_GET['profesion']:NULL;
 
-      $pdf->busqueda($fechas,$sel,$ext,$tipos);
+      $pdf->busqueda($registro,$nacimiento,$registrado,$centro,$sector,$ubicacion,$profesion);
     break;
     case 'elector':
       $elector = $_GET['id'];
 
       $pdf->elector($elector);
     break;
-    case 'electores_pdf':
+    case 'electores':
       $pdf->electores();
     break;
     default:

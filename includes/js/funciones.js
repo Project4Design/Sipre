@@ -115,7 +115,6 @@ $(document).ready(function() {
           if(r.response){
             $('#'+fid+' .alert').removeClass('alert-danger').addClass('alert-success');
             form[0].reset();
-            console.log("reset?");
           }else if(r.response=="mod"){
             $('#'+fid+' .alert').removeClass('alert-danger').addClass('alert-success');
           }else{

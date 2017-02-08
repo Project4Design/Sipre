@@ -25,11 +25,14 @@ switch($opc):
     <section>
       <a class="btn btn-flat btn-default" href="?ver=sectores"><i class="fa fa-reply" aria-hidden="true"></i> Volver</a>
       <a class="btn btn-flat btn-danger" href="reportes/sectores.php?action=sector&id=<?=$id?>"><i class="fa fa-print" aria-hidden="true"></i> Imprimir sector</a>
+      <?if($_SESSION['nivel']=="A"){?>
+        <button class="btn btn-flat btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-times" aria-hidden="true"></i> Eliminar</button>
+      <?}?>
     </section>
     <section>
       <div class="row">
         <div class="col-md-12">
-          <h3 class="text-center" style="margin-top:0">Ubicaciones pertenecientes al <span style="color:#E42126"><?=$sector->sect_nombre?></span></h3><br>
+          <h3 class="text-center" style="margin-top:0">Ubicaciones pertenecientes a <span style="color:#E42126"><?=$sector->sect_nombre?></span></h3><br>
         </div>
         <div class="col-md-12">
           <div class="col-md-3 col-sm-6 col-xs-12">
@@ -109,7 +112,7 @@ switch($opc):
         <div class="col-md-12">
           <div class="box box-warning">
             <div class="box-header">
-              <h3 class="box-title"> Electores registrados en el <?=$sector->sect_nombre?></h3>
+              <h3 class="box-title"> Electores registrados en <?=$sector->sect_nombre?></h3>
             </div>
             <div class="box-body">
               <table class="table table-striped data-table table-bordered table-hover table-condensed">
@@ -150,6 +153,41 @@ switch($opc):
         </div>
       </div>
     </section>
+
+    <div id="deleteModal" class="modal fade modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="fdelete" action="funciones/class.sectores.php">
+            <input type="hidden" name="action" value="del_sector">
+            <input type="hidden" name="id" value="<?=$id?>">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h4 class="modal-title">Eliminar Sector</h4>
+            </div>
+            <div class="modal-body">
+              <h4 class="text-center">¿Esta seguro que desea eliminar a este Sector?</h4>
+              <p class="text-center">No se podran eliminar secotres si tienen ubicaciones registradas.</p>
+              <p class="text-center"><small>Esta acción no se puede deshacer.</small></p>
+
+              <div class="alert alert-dismissible" role="alert" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;<span id="msj"></span>
+              </div>
+
+              <div class="progress progress-sm active" style="display:none">
+                <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width:100%">
+                  <span class="sr-only">100% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+              <button id="b-del-item" type="submit" class="btn btn-outline b-submit">Eliminar</button>
+            </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
   <?
   break;
   case 'ubc':
@@ -162,6 +200,9 @@ switch($opc):
       <div class="col-md-12">
         <a class="btn btn-flat btn-default" href="?ver=sectores"><i class="fa fa-reply" aria-hidden="true"></i> Volver</a>
         <a class="btn btn-flat btn-danger" href="reportes/sectores.php?action=sh&id=<?=$id?>"><i class="fa fa-print" aria-hidden="true"></i> Imprimir ubicacion</a>
+        <?if($_SESSION['nivel']=="A"){?>
+        <button class="btn btn-flat btn-danger" data-toggle="modal" data-target="#deleteModal"><i class="fa fa-times" aria-hidden="true"></i> Eliminar</button>
+      <?}?>
       </div>
     </div></br>
 
@@ -246,6 +287,41 @@ switch($opc):
       </div>
     </div>
 
+    <div id="deleteModal" class="modal fade modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form id="fdelete" action="funciones/class.sectores.php">
+            <input type="hidden" name="action" value="del_sh">
+            <input type="hidden" name="id" value="<?=$id?>">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              <h4 class="modal-title">Eliminar Ubicación</h4>
+            </div>
+            <div class="modal-body">
+              <h4 class="text-center">¿Esta seguro que desea eliminar esta Ubicación?</h4>
+              <p class="text-center">No se podran eliminar ubicaciones si tienen electores registrados.</p>
+              <p class="text-center"><small>Esta acción no se puede deshacer.</small></p>
+
+              <div class="alert alert-dismissible" role="alert" style="display:none">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;<span id="msj"></span>
+              </div>
+
+              <div class="progress progress-sm active" style="display:none">
+                <div class="progress-bar progress-bar-primary progress-bar-striped" role="progressbar" aria-valuenow="100" aria-valuemin="100" aria-valuemax="100" style="width:100%">
+                  <span class="sr-only">100% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Cerrar</button>
+              <button id="b-del-item" type="submit" class="btn btn-outline b-submit">Eliminar</button>
+            </div>
+          </form>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
   <?
   break;
   default:
@@ -314,7 +390,9 @@ switch($opc):
                   <td class="text-center"><?=round($avg,2)?> <small>%</small></td>
                   <td class="text-center">
                     <a class="btn btn-flat btn-primary btn-sm" href="?ver=sectores&opc=sector&id=<?=$d->id_sector?>"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <?if($_SESSION['nivel']=="A"){?>
                     <button id="<?=$d->id_sector?>" class="btn btn-flat btn-success btn-sm" type="button" onclick="get_data('sector-add',this.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <?}?>
                     <a href="reportes/sectores.php?action=sector&id=<?=$d->id_sector?>" class="btn btn-sm btn-flat btn-danger"><i class="fa fa-print" aria-hidden="true"></i></a>
                   </td>
                 </tr>
@@ -407,7 +485,9 @@ switch($opc):
                   <td class="text-center"><?=round($avg,2)?> <small>%</small></td>
                   <td class="text-center">
                     <a class="btn btn-flat btn-primary btn-sm" href="?ver=sectores&opc=ubc&id=<?=$d->id_sh?>"><i class="fa fa-search" aria-hidden="true"></i></a>
+                    <?if($_SESSION['nivel']=="A"){?>
                     <button id="<?=$d->id_sh?>" class="btn btn-flat btn-success btn-sm" type="button" onclick="get_data('ubicacion-add',this.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    <?}?>
                     <a class="btn btn-flat btn-sm btn-danger" href="reportes/sectores.php?action=sh&id=<?=$d->id_sh?>"><i class="fa fa-print" aria-hidden="true"></i></a>
                   </td>
                 </tr>

@@ -129,7 +129,7 @@ $user = $usuarios->perfil();
               </div>
               <div class="col-md-8 col-md-offset-2">
                 <input id="b-registro" class="btn btn-flat btn-primary b-submit" type="submit" name="registrar" value="Guardar">
-                <input class="btn btn-flat btn-default" type="reset" name="registrar" value="Limpiar">
+                <button type="button" class="btn btn-flat btn-default" data-dismiss="modal">Cerrar</button>
               </div>
             </form>    
                   </div>

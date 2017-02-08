@@ -161,7 +161,7 @@ class Sectores{
 			}else{
 				$query = Query::prun("INSERT INTO sectores (sect_nombre) VALUES (?)",array("s",$sector));
 
-				$this->rh->setResponse(true,"Sector agregado correctamente",true,"inicio.php?ver=sectores");
+				$this->rh->setResponse(true,"Sector agregado correctamente.",true,"inicio.php?ver=sectores");
 			}
 		}else{
 			$this->rh->setResponse(false,"No tienes permisos para realizar esta accion.");
@@ -179,7 +179,7 @@ class Sectores{
 			}else{
 				$query = Query::prun("INSERT INTO sectores_hijos (id_sector,sh_nombre) VALUES (?,?)",array("is",$sector,$sh));
 
-				$this->rh->setResponse(true,"Ubicación agregada correctamente",true,"inicio.php?ver=sectores");
+				$this->rh->setResponse(true,"Ubicación agregada correctamente.",true,"inicio.php?ver=sectores");
 			}
 		}else{
 			$this->rh->setResponse(false,"No tienes permisos para realizar esta accion.");
@@ -197,7 +197,7 @@ class Sectores{
 				$this->rh->setResponse(true);
 			}else{
 				$this->rh->data = NULL;
-				$this->rh->setResponse(false,"Sector no encontrado");
+				$this->rh->setResponse(false,"Sector no encontrado.");
 			}
 		}else{
 			$this->rh->setResponse(false,"No tienes permisos para realizar esta accion.");
@@ -263,6 +263,64 @@ class Sectores{
 		echo json_encode($this->rh);
 	}//Sh_edit
 
+	//Eliminar Sector
+	public function del_sector($sector){
+		if($this->nivel=="A"){
+			$query = Query::prun("SELECT id_sector FROM sectores WHERE id_sector = ? LIMIT 1",array("i",$sector));
+
+			if($query->result->num_rows>0){
+				$query = Query::prun("SELECT id_sector FROM sectores_hijos WHERE id_sector = ? LIMIT 1",array("i",$sector));
+
+				if($query->result->num_rows>0){
+					$this->rh->setResponse(false,"Este sector tiene ubicaciones agregadas. No se puede eliminar.");
+				}else{
+					$query = Query::run("DELETE FROM sectores WHERE id_sector = $sector LIMIT 1");
+
+					if($query){
+						$this->rh->setResponse(true,"Sector eliminado.",true,"inicio.php?ver=sectores");
+					}else{
+						$this->rh->setResponse(false,"Ha ocurido un error.");
+					}
+				}
+			}else{
+				$this->rh->setResponse(false,"Sector no encontrado.");
+			}
+		}else{
+			$this->rh->setResponse(false,"No tienes permisos para realizar esta accion.");
+		}
+
+		echo json_encode($this->rh);
+	}//del_sector
+
+	//Eliminar Sector_hijo (ubicacion)
+	public function del_sh($sh){
+		if($this->nivel=="A"){
+			$query = Query::prun("SELECT id_sh FROM sectores_hijos WHERE id_sh = ? LIMIT 1",array("i",$sh));
+
+			if($query->result->num_rows>0){
+				$query = Query::prun("SELECT id_sh FROM electores WHERE id_sh = ? LIMIT 1",array("i",$sh));
+
+				if($query->result->num_rows>0){
+					$this->rh->setResponse(false,"Esta ubicación tiene electores registrados. No se puede eliminar.");
+				}else{
+					$query = Query::run("DELETE FROM sectores_hijos WHERE id_sh = $sh LIMIT 1");
+
+					if($query){
+						$this->rh->setResponse(true,"Ubicación eliminada.",true,"inicio.php?ver=sectores");
+					}else{
+						$this->rh->setResponse(false,"Ha ocurido un error.");
+					}
+				}
+			}else{
+				$this->rh->setResponse(false,"Ubicación no encontrada.");
+			}
+		}else{
+			$this->rh->setResponse(false,"No tienes permisos para realizar esta accion.");
+		}
+
+		echo json_encode($this->rh);
+	}//del_sh
+
 }//Class Sectores
 
 // Logica
@@ -310,6 +368,16 @@ if(Base::IsAjax()):
 				$nombre    = strtoupper($_POST['ubicacion']);
 
 				$modelSectores->sh_edit($ubicacion,$sector,$nombre);
+			break;
+			case 'del_sector':
+				$sector = $_POST['id'];
+
+				$modelSectores->del_sector($sector);
+			break;
+			case 'del_sh':
+				$sh = $_POST['id'];
+
+				$modelSectores->del_sh($sh);
 			break;
 		endswitch;
 	endif;

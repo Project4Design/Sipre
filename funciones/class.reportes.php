@@ -12,84 +12,125 @@ class Reportes{
 		$this->rh = new ResponseHelper();
 	}
 
-	public function donaciones($fechas,$sel,$ext,$tipos)
+	public function electores($registro,$nacimiento,$registrado,$centro,$sector,$ubicacion,$profesion)
 	{
 		$data = (object) array();
 		$data->table = $arguments = $params = "";
 		$data->link  = array();
-		$data->total = $data->f = $data->m = $x = $i = 0;
+		$data->total = $x = $i = 0;
 
-		if($fechas[0] == "" && $fechas[1] == "" && $sel == 0 && $ext == 0 && $tipos == NULL){
+		if($registro[0] == "" && $registro[1] == "" && $nacimiento[0] == "" && $nacimiento[1] == "" && $registrado == 0 && $centro == 0 && $sector == 0 && $ubicacion == 0 && $profesion == NULL){
 			$where = "";
 		}else{
 			$where = "WHERE ";
 		}
 
-		if($ext != 0){
-			$arguments .= $ext;
+		if($registrado > 0){
+			$arguments .= $registrado;
 			$params .= "i";
-			$where .= " dn.dn_extractor = ? ";
-			$data->link["extractor"] = $ext;
+			$where .= " e.id_user = ? ";
+			$data->link["registrado"] = $registrado;
 			$x++;
 		}
 
-		if($sel != 0){
+		if($centro > 0){
 			$pre = ($x > 0)? ",":" ";
-			$arguments .= $pre.$sel;
+			$arguments .= $pre.$centro;
 			$params .= "i";
-			$where .= ($x > 0)? " AND dn.dn_seleccionador = ?" : " dn.dn_seleccionador = ? ";
-			$data->link["selector"] = $sel;
+			$where .= ($x > 0)?" AND c.id_centro = ?" : " c.id_centro = ? ";
+			$data->link["centro"] = $centro;
 			$x++;
 		}
 
-		if($fechas[0] != "" || $fechas[1] != ""){
-			$pre = ($x > 0) ? " AND " : " ";
-			$fecha = $pre." (dn.dn_fecha_reg BETWEEN ? AND ?) ";
-			$params .="ss";
-			$where .= $fecha;
-			$data->link["fechas"] = $fechas;
+		if($registro[0] != "" || $registro[1] != ""){
+      $pre = ($x > 0) ? " AND " : " ";
+      $fecha = $pre." (e.elec_fecha_reg BETWEEN ? AND ?) ";
+      $params .="ss";
+      $where .= $fecha;
 
-			foreach ($fechas as $k => $v) {
-				if($fechas[0] != ""){
-					$inicio = Base::Convert($fechas[0]);
-				}else{
-					$inicio = Base::Fecha();
-				}
+      foreach ($registro as $k => $v) {
+        if($registro[0] != ""){
+          $inicio = Base::Convert($registro[0]);
+        }else{
+          $inicio = Base::Fecha();
+        }
 
-				if($fechas[1] != ""){
-					$fin = Base::Convert($fechas[1]);
-				}else{
-					$fin = Base::Fecha();
-				}
-			}
-			$arguments  .= ($x > 0)? "," : "";
-			$arguments  .= $inicio.",".$fin;
+        if($registro[1] != ""){
+          $fin = Base::Convert($registro[1]);
+        }else{
+          $fin = Base::Fecha();
+        }
+      }
+
+      $arguments  .= ($x > 0)? "," : "";
+      $arguments  .= $inicio.",".$fin;
+      $data->link["registro"] = $registro;
+      $x++;
+    }
+
+    if($nacimiento[0] != "" || $nacimiento[1] != ""){
+      $pre = ($x > 0) ? " AND " : " ";
+      $fecha = $pre." (e.elec_nacimiento BETWEEN ? AND ?) ";
+      $params .="ss";
+      $where .= $fecha;
+
+      foreach ($nacimiento as $k => $v) {
+        if($nacimiento[0] != ""){
+          $inicio = Base::Convert($nacimiento[0]);
+        }else{
+          $inicio = Base::Fecha();
+        }
+
+        if($nacimiento[1] != ""){
+          $fin = Base::Convert($nacimiento[1]);
+        }else{
+          $fin = Base::Fecha();
+        }
+      }
+
+      $arguments  .= ($x > 0)? "," : "";
+      $arguments  .= $inicio.",".$fin;
+      $data->link["nacimiento"] = $nacimiento;
+      $x++;
+    }
+
+		
+		if($sector > 0){
+			$pre = ($x > 0)? ",":" ";
+			$arguments .= $pre.$sector;
+			$params .= "i";
+			$where .= ($x > 0)?" AND s.id_sector = ?" : " s.id_sector = ? ";
+			$data->link["sector"] = $sector;
 			$x++;
 		}
 
-		$ctipo = count($tipos); $i = 0;
-		if($ctipo > 0){
-			$pre = ($x > 0) ? " AND " : " ";
-			$data->link["tipos"] = $tipos;
-			$tipo = $pre." ( ";
+		if($ubicacion > 0){
+			$pre = ($x > 0)? ",":"";
+			$arguments .= $pre.$ubicacion;
+			$params .= "i";
+			$where .= ($x > 0)?" AND sh.id_sh = ?" : " sh.id_sh = ? ";
+			$data->link["ubicacion"] = $ubicacion;
+			$x++;
+		}
 
-			foreach($tipos as $k => $v){
-				if($i>0){
-					$tipo .= " OR dn.dn_tipo = ? ";
-				}else{
-					$tipo .= " dn.dn_tipo = ? ";
-				}
+		if($profesion){
+			$pre = ($x > 0) ? " AND (" : " (";
+			$preQuery = ""; $j=0;
 
-				$arguments .= ($x > 0) ? ",".$v : $v;
+			foreach ($profesion as $k => $v) {
+				$preQuery .= ($j > 0) ? " || e.elec_profesion = ?" : " e.elec_profesion = ?";
+				$preArg = ($x > 0)? ",":"";
+				$arguments .= $preArg.$v;
+
 				$params .= "s";
-				$x++;
-				$i++;
+				$x++; $j++;
 			}
 
-			$tipo .= ") ";
-			$where .= $tipo;
+			$where .= $pre.$preQuery.")";
+			$data->link["profesion"] = $profesion;
 		}
 
+		//Link para el boton imprimir en la vista
 		if($params == "" && $arguments == ""){
 			$cadena = NULL;
 			$data->link = "#";
@@ -98,10 +139,12 @@ class Reportes{
 			$params .= ",".$arguments;
 			$cadena = explode(",",$params);
 		}
+		//fin_link para boton
 
-		$query = Query::prun("SELECT dn.*,don.id_donante,don.don_sexo AS sexo,don.don_nombres,don.don_apellidos FROM donaciones AS dn
-																		INNER JOIN donantes AS don ON don.id_donante = dn.id_donante
-																		$where",$cadena);
+		$query = Query::prun("SELECT e.* , s.* , sh.* , c.* FROM electores AS e 
+							  INNER JOIN sectores AS s ON s.id_sector = e.id_sector 
+							  INNER JOIN sectores_hijos AS sh ON sh.id_sh = e.id_sh 
+							  INNER JOIN centros AS c ON c.id_centro=e.id_centro $where",$cadena);
 
 		if($query->response){
 			if($query->result->num_rows > 0){
@@ -109,22 +152,16 @@ class Reportes{
 				while ($don = $query->result->fetch_array(MYSQLI_ASSOC)) {
 					$data->total ++;
 
-					if($don["sexo"] == "M"){
-						$data->m++;
-					}else{
-						$data->f++;
-					}
-
 					$data->table .="<tr>
 								            <td class=\"text-center\">".$i."</td>
-								            <td>".$don["dn_historia"]."</td>
-								            <td><a href=\"?ver=donantes&opc=ver&id=".$don["id_donante"]."\">".$don["don_nombres"]." ".$don["don_apellidos"]."</a></td>
-								            <td>".$don["dn_tipo"]."</td>
-								            <td>".$don["dn_segmento"]."</td>
-								            <td class=\"text-center\">".Base::Convert($don["dn_fecha_reg"])."</td>
+								            <td>{$don['sh_nombre']}</td>
+								            <td>{$don['elec_nombres']}</td>
+								            <td>{$don['elec_apellidos']}</td>
+								            <td>{$don['elec_email']}</td>
+								            <td>{$don['elec_telefono']}</td>
 								            <td class=\"text-center\">
-								              <a class=\"btn btn-primary btn-sm\" href=\"?ver=donaciones&opc=ver&id=".$don["id_donacion"]."\"><i class=\"fa fa-search\"></i></a>
-								              <a class=\"btn btn-danger btn-sm\" href=\"?ver=reportes&opc=donaciones&id=".$don["id_donacion"]."\"><i class=\"fa fa-print\"></i></a>
+								              <a class=\"btn btn-primary btn-flat btn-sm\" href=\"?ver=electores&opc=ver&id={$don['id_elector']}\"><i class=\"fa fa-search\"></i></a>
+								              <a class=\"btn btn-danger btn-flat btn-sm\" href=\"reportes/electores.php?action=elector&id={$don["id_elector"]}\"><i class=\"fa fa-print\"></i></a>
 								            </td>
 													</tr>";
 					$i++;
@@ -143,7 +180,7 @@ class Reportes{
 		$this->rh->data = $data;
 
 		echo json_encode($this->rh);
-	}//Donaciones
+	}//Electores
 
 }//Class Reportes
 
@@ -152,29 +189,25 @@ $modelReportes = new Reportes();
 if(Base::IsAjax()):
 	if(isset($_POST['action'])):
 	  switch ($_POST['action']):
-			case 'donaciones':
-				$fechas = $_POST['fechas'];
-				$sel    = $_POST['selector'];
-				$ext    = $_POST['extractor'];
-				
-				if(isset($_POST['tipos'])){
-					$tipos  = $_POST['tipos'];
+			case 'electores':
+				if($_POST['registro']!=""){
+					$registro = explode(" | ",$_POST['registro']);
 				}else{
-					$tipos = NULL;
+					$registro = array("","");
 				}
 
-				$modelReportes->donaciones($fechas,$sel,$ext,$tipos);
-			break;
-				
-			case 'edit_don':
-				$modelReportes->edit($id,$cedula,$nombres,$apellidos,$sexo,$nacimiento,$fecha_nac,$edad,$dh,$dh_pob,$dh_estado,$dh_tlf,$dt,$dt_pob,$dt_estado,$dt_tlf,$profesion,$ocupacion,$preguntas);
-			break;
+				if($_POST['nacimiento']!=""){
+					$nacimiento = explode(" | ",$_POST['nacimiento']);
+				}else{
+					$nacimiento = array("","");
+				}
+				$registrado  = isset($_POST['registrado'])?$_POST['registrado']:0;
+				$centro      = isset($_POST['centro'])?$_POST['centro']:0;
+				$sector      = isset($_POST['sector'])?$_POST['sector']:0;
+				$ubicacion   = isset($_POST['ubicacion'])?$_POST['ubicacion']:0;
+				$profesion   = isset($_POST['profesion'])?$_POST['profesion']:NULL;
 
-			case 'estado':
-				$id     = $_POST["id"];
-				$estado = $_POST["estado"];
-
-				$modelReportes->estado($id,$estado);
+				$modelReportes->electores($registro,$nacimiento,$registrado,$centro,$sector,$ubicacion,$profesion);
 			break;
 		endswitch;
 	endif;

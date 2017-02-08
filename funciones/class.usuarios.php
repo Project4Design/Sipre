@@ -59,7 +59,7 @@ class Usuarios{
 	    return $data;
 	}//obtener
 
-	public function add($nivel,$estado,$cedula,$nombres,$apellidos,$email,$pass,$sexo,$telefono)
+	public function add($cedula,$nombres,$apellidos,$email,$pass,$sexo,$telefono)
 	{
 		if($this->nivel=="A"){
 			$query = Query::prun("SELECT user_email FROM usuarios WHERE user_eliminado = ? AND user_email = ? LIMIT 1",array("is","0",$email));
@@ -72,9 +72,9 @@ class Usuarios{
 				if($query->result->num_rows>0){
 					$this->rh->setResponse(false,"Cedula ya registrada.");
 				}else{
-			  	$query = Query::prun("INSERT INTO usuarios (user_nivel,user_estado,user_nombres,user_apellidos,user_cedula,user_email,user_pass,user_sexo,user_telefono,user_fecha_reg,user_hora_reg)
-												VALUES(?,?,?,?,?,?,?,?,?,?,?)",
-												array("sssssssssss",$nivel,$estado,$nombres,$apellidos,$cedula,$email,$pass,$sexo,$telefono,$this->fecha,$this->hora));
+			  	$query = Query::prun("INSERT INTO usuarios (user_nombres,user_apellidos,user_cedula,user_email,user_pass,user_sexo,user_telefono)
+												VALUES(?,?,?,?,?,?,?)",
+												array("sssssss",$nombres,$apellidos,$cedula,$email,$pass,$sexo,$telefono));
 			  	if($query->response){
 						$this->rh->setResponse(true,"Registro exitoso! <a href=\"?ver=usuarios&opc=ver&id={$query->id}\">Ver usuario</a>");
 			  	}else{
@@ -90,7 +90,7 @@ class Usuarios{
 		
 	}//add
 
-	public function edit_admin($id,$estado,$nivel,$cedula,$nombres,$apellidos,$email,$sexo,$telefono)
+	public function edit_admin($id,$cedula,$nombres,$apellidos,$email,$sexo,$telefono)
 	{
 		if($this->nivel=="A"){
 
@@ -105,8 +105,6 @@ class Usuarios{
 				  $this->rh->setResponse(false,"Ya existe un usuario registrado con este email.");
 				}else{
 			  	$query = Query::prun("UPDATE usuarios SET
-			  												user_nivel     = ?,
-			  												user_estado    = ?,
 			  												user_cedula    = ?,
 																user_nombres   = ?,
 																user_apellidos = ?,
@@ -114,7 +112,7 @@ class Usuarios{
 																user_sexo      = ?,
 																user_telefono  = ?
 															WHERE id_user = ? LIMIT 1",
-															array("ssssssssi",$nivel,$estado,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$id));
+															array("ssssssi",$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$id));
 			  	if($query->response){
 						$this->rh->setResponse(true,"Cambios guardados con exito!",true,"inicio.php?ver=usuarios&opc=ver&id=".$id);
 				  }else{
@@ -290,23 +288,19 @@ if(Base::IsAjax()):
 	if(isset($_POST['action'])):
 	  switch ($_POST['action']):
 			case 'add':
-				$estado    = $_POST["estado"];
-				$nivel     = $_POST["nivel"];
 				$cedula    = $_POST["cedula"];
 				$nombres   = ucwords(strtolower($_POST["nombres"]));
 				$apellidos = ucwords(strtolower($_POST["apellidos"]));
-				$sexo      = $_POST["sexo"];
 				$email     = ucfirst(strtolower($_POST["email"]));
+				$sexo      = $_POST["sexo"];
 				$telefono  = $_POST["telefono"];
 				$pass      = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
-				$modelUser->add($nivel,$estado,$cedula,$nombres,$apellidos,$email,$pass,$sexo,$telefono);
+				$modelUser->add($cedula,$nombres,$apellidos,$email,$pass,$sexo,$telefono);
 			break;
 				
 			case 'edit_admin':
 				$id        = $_POST["id"];
-				$estado    = $_POST["estado"];
-				$nivel     = $_POST["nivel"];
 				$cedula    = $_POST["cedula"];
 				$nombres   = ucwords(strtolower($_POST["nombres"]));
 				$apellidos = ucwords(strtolower($_POST["apellidos"]));
@@ -314,7 +308,7 @@ if(Base::IsAjax()):
 				$email     = ucfirst(strtolower($_POST["email"]));
 				$telefono  = $_POST["telefono"];
 				
-				$modelUser->edit_admin($id,$estado,$nivel,$cedula,$nombres,$apellidos,$email,$sexo,$telefono);
+				$modelUser->edit_admin($id,$cedula,$nombres,$apellidos,$email,$sexo,$telefono);
 			break;
 
 			case 'edit':

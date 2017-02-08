@@ -77,29 +77,38 @@ class Electores{
 	}//obtener
 
 	//Agregar elector
-	public function add($modo,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram)
+	public function add($modo,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram)
 	{
-		$query = Query::prun("SELECT elec_cedula FROM electores WHERE elec_eliminado = ? AND elec_cedula = ? LIMIT 1",array("is","0",$cedula));
+		$query = Query::prun("SELECT elec_cedula FROM electores WHERE elec_cedula = ? LIMIT 1",array("i",$cedula));
 
 		if($query->result->num_rows>0){
 			$this->rh->setResponse(false,"Cedula ya registrada.");
 		}else{
-			$query = Query::prun("SELECT elec_email FROM electores WHERE elec_eliminado = ? AND elec_email = ? LIMIT 1",array("is","0",$email));
+			$query = Query::prun("SELECT elec_email FROM electores WHERE elec_email = ? LIMIT 1",array("s",$email));
 
 			if($query->result->num_rows>0){
 				$this->rh->setResponse(false,"Correo ya registrado.");
 			}else{
-				//Eliminar caracteres no deseados del numero de telefono
-				$telefono = str_replace($this->delete,"",$telefono);
+				$date = date_diff(date_create($nacimiento),date_create(Base::Fecha()));
+    		$edad = $date->format('%y');
 
-		  	$query = Query::prun("INSERT INTO electores (id_user,elec_nombres,elec_apellidos,elec_cedula,elec_email,elec_sexo,elec_telefono,elec_nacimiento,elec_profesion,id_sector,id_sh,elec_direccion,id_centro,elec_facebook,elec_twitter,elec_instagram)
-																VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-																array("issssssssiisisss",$this->user,$nombres,$apellidos,$cedula,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram));
-		  	if($query->response){
-					$this->rh->setResponse(true,"Registro exitoso! <a href=\"?ver=electores&opc=ver&id={$query->id}\">Ver elector</a>");
-		  	}else{
-					$this->rh->setResponse(false,"Ah ocurrido un error. Revise la informacion proporcionada");
-		  	}
+				if($edad>17){
+					//Eliminar caracteres no deseados del numero de telefono
+					$telefono  = str_replace($this->delete,"",$telefono);
+					$telefono2 = str_replace($this->delete,"",$telefono2);
+
+			  	$query = Query::prun("INSERT INTO electores (id_user,elec_nombres,elec_apellidos,elec_cedula,elec_email,elec_sexo,elec_telefono,elec_telefono2,elec_nacimiento,elec_profesion,id_sector,id_sh,elec_direccion,id_centro,elec_facebook,elec_twitter,elec_instagram)
+																	VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+																	array("isssssssssiisisss",$this->user,$nombres,$apellidos,$cedula,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram));
+
+			  	if($query->response){
+						$this->rh->setResponse(true,"Registro exitoso! <a href=\"?ver=electores&opc=ver&id={$query->id}\">Ver elector</a>");
+			  	}else{
+						$this->rh->setResponse(false,"Ah ocurrido un error. Revise la informacion proporcionada.");
+			  	}
+			  }else{
+			  	$this->rh->setResponse(false,"El elector no puede ser menor de 18 años. Edad:{$edad}");
+			  }
 		  }
 		}
 
@@ -112,21 +121,22 @@ class Electores{
 	}//add
 
 	//Editar elector
-	public function edit($id,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram)
+	public function edit($id,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram)
 	{
 		
-		$query = Query::prun("SELECT elec_cedula FROM electores WHERE elec_eliminado = ? AND elec_cedula = ? AND id_elector != ? LIMIT 1",array("isi","0",$cedula,$id));
+		$query = Query::prun("SELECT elec_cedula FROM electores WHERE elec_cedula = ? AND id_elector != ? LIMIT 1",array("si",$cedula,$id));
 		
 		if($query->result->num_rows>0){
 		  $this->rh->setResponse(false,"Ya existe un elector registrado con esta cedula.");
 		}else{
-			$query = Query::prun("SELECT elec_email FROM electores WHERE elec_eliminado = ? AND elec_email = ? AND id_elector != ? LIMIT 1",array("isi","0",$email,$id));
+			$query = Query::prun("SELECT elec_email FROM electores WHERE elec_email = ? AND id_elector != ? LIMIT 1",array("si",$email,$id));
 		
 			if($query->result->num_rows>0){
 			  $this->rh->setResponse(false,"Ya existe un elector registrado con este email.");
 			}else{
 
-				$telefono = str_replace($this->delete,"",$telefono);
+				$telefono  = str_replace($this->delete,"",$telefono);
+				$telefono2 = str_replace($this->delete,"",$telefono2);
 
 		  	$query = Query::prun("UPDATE electores SET
 															elec_nombres    = ?,
@@ -135,6 +145,7 @@ class Electores{
 															elec_email      = ?,
 															elec_sexo       = ?,
 															elec_telefono   = ?,
+															elec_telefono2  = ?,
 															elec_nacimiento = ?,
 															elec_profesion  = ?,
 															id_sector       = ?,
@@ -145,7 +156,7 @@ class Electores{
 															elec_twitter    = ?,
 															elec_instagram  = ?
 														WHERE id_elector = ? LIMIT 1",
-														array("ssssssssiisisssi",$nombres,$apellidos,$cedula,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram,$id));
+														array("sssssssssiisisssi",$nombres,$apellidos,$cedula,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram,$id));
 		  	if($query->response){
 					$this->rh->setResponse(true,"Cambios guardados con exito!",true,"inicio.php?ver=electores&opc=ver&id={$id}");
 			  }else{
@@ -159,26 +170,16 @@ class Electores{
 
 
 	//
-	public function activar($id,$estado){
+	public function delete($id){
 
 		$query = Query::prun("SELECT id_elector FROM electores WHERE id_elector = ? LIMIT 1",array("i",$id));
 
 		if($query->result->num_rows>0){
 
-			$query = Query::prun("UPDATE electores SET elec_estado = ? WHERE id_elector = ? LIMIT 1",array("si",$estado,$id));
+			$query = Query::prun("DELETE FROM electores WHERE id_elector = ?",array("i",$id));
 
 			if($query->response){
-				if($estado == "A"){
-					$a = "Activado";
-					$r = 1;
-					$b = "<button id=\"btn-activar\" class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#activarModal\" data-title=\"Desactivar\" data-val=\"I\"></i><i class=\"fa fa-close\" aria-hidden=\"true\">&nbsp;Desactivar</button>";
-				}else{
-					$a = "Desactivado";
-					$b = "<button id=\"btn-activar\" class=\"btn btn-success\" data-toggle=\"modal\" data-target=\"#activarModal\" data-title=\"Activar\" data-val=\"A\"><i class=\"fa fa-check\" aria-hidden=\"true\"></i>&nbsp;Activar</button>";
-					$r = 0;
-				}
-				$this->rh->setResponse(true,"El elector ha sido <b>".$a."</b>");
-				$this->rh->data = array("e"=>$r,"b"=>$b);
+				$this->rh->setResponse(true,"Elector eliminado.",true,"inicio.php?ver=electores");
 			}else{
 				$this->rh->setResponse(false,"Ha ocurrido un error inesperado.");
 			}
@@ -275,26 +276,27 @@ class Electores{
 				$email      = ucfirst(strtolower($row[3]));
 				$sexo       = $row[4];
 				$telefono   = $row[5];
-				$nacimiento = ($row[6]!=NULL)? Base::Convert(gmdate("Y-m-d", ($row[6] - 25569) * 86400)) : NULL;
-				$profesion  = $row[7];
-				$sector     = $row[8];
-				$ubicacion  = $row[9];
-				$direccion  = $row[10];
-				$centro     = $row[11];
-				$facebook   = $row[12];
-				$twitter    = $row[13];
-				$instagram  = $row[14];
+				$telefono2  = $row[6];
+				$nacimiento = ($row[7]!=NULL)? gmdate("Y-m-d", ($row[7] - 25569) * 86400) : NULL;
+				$profesion  = $row[8];
+				$sector     = $row[9];
+				$ubicacion  = $row[10];
+				$direccion  = $row[11];
+				$centro     = $row[12];
+				$facebook   = $row[13];
+				$twitter    = $row[14];
+				$instagram  = $row[15];
 
-				$ok = $this->add(0,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram);
-
+				$ok = $this->add(0,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram);
+				$nacimiento = Base::Convert($nacimiento);
 				if(!$this->rh->response){
 					$error .="<tr class=\"danger\">
-										<td>".($i+1)."</td><td>{$nombres}</td><td>{$apellidos}</td><td>{$cedula}</td>
-										<td>{$email}</td><td>{$sexo}</td><td>{$telefono}</td><td>{$nacimiento}</td>
+										<td>".($x+1)."</td><td>{$nombres}</td><td>{$apellidos}</td><td>{$cedula}</td>
+										<td>{$email}</td><td>{$sexo}</td><td>{$telefono}</td><td>{$telefono2}</td><td>{$nacimiento}</td>
 										<td>{$profesion}</td><td>{$sector}</td><td>{$ubicacion}</td><td>{$direccion}</td>
 										<td>{$centro}</td><td>{$facebook}</td><td>{$twitter}</td><td>{$instagram}</td>
 										</tr>
-									<tr><td></td><td colspan=\"15\">Razón: {$this->rh->msj}</td></tr>";
+										<tr><td></td><td colspan=\"16\">Razón: {$this->rh->msj} </td></tr>";
 					$x++;
 				}
 				$i++;
@@ -337,6 +339,7 @@ if(Base::IsAjax()):
 				$email      = ucfirst(strtolower($_POST["email"]));
 				$sexo       = $_POST["sexo"];
 				$telefono   = $_POST["telefono"];
+				$telefono2  = $_POST["telefono2"];
 				$nacimiento = Base::Convert($_POST["nacimiento"]);
 				$profesion  = $_POST["profesion"];
 				$sector     = $_POST["sector"];
@@ -347,7 +350,7 @@ if(Base::IsAjax()):
 				$twitter    = $_POST["twitter"];
 				$instagram  = $_POST["instagram"];
 
-				$modelElectores->add($modo,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram);
+				$modelElectores->add($modo,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram);
 			break;
 
 			case 'edit':
@@ -358,6 +361,7 @@ if(Base::IsAjax()):
 				$email      = ucfirst(strtolower($_POST["email"]));
 				$sexo       = $_POST["sexo"];
 				$telefono   = $_POST["telefono"];
+				$telefono2  = $_POST["telefono2"];
 				$nacimiento = Base::Convert($_POST["nacimiento"]);
 				$profesion  = $_POST["profesion"];
 				$sector     = $_POST["sector"];
@@ -368,14 +372,13 @@ if(Base::IsAjax()):
 				$twitter    = $_POST["twitter"];
 				$instagram  = $_POST["instagram"];
 
-				$modelElectores->edit($id,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram);
+				$modelElectores->edit($id,$cedula,$nombres,$apellidos,$email,$sexo,$telefono,$telefono2,$nacimiento,$profesion,$sector,$ubicacion,$direccion,$centro,$facebook,$twitter,$instagram);
 			break;
 
-			case 'activar':
+			case 'delete':
 				$id     = $_POST['id'];
-				$estado = $_POST['estado'];
 
-				$modelElectores->activar($id,$estado);
+				$modelElectores->delete($id);
 			break;
 
 			case 'preview':
