@@ -563,3 +563,249 @@ Invocation of method mysqli_stmt::bind_param() failed
 #3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
 #4 {main}
 Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:18:37 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:18:37 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:18:45 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:18:45 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:18:47 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:18:47 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:19:02 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:19:02 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:19:06 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:19:06 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:19:08 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:19:08 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:20:56 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.usuarios.php(51): Query::prun('SELECT * FROM u...', Array)
+#2 C:\xampp\htdocs\sipre\views\usuarios.php(3): Usuarios->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(13): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:21:01 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:21:01 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:21:05 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:21:05 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:21:09 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:21:09 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:22:45 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:22:45 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:22:56 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:22:56 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:22:57 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:22:57 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:23:34 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:23:34 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:26:14 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:26:14 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:26:52 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:26:52 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:27:11 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:27:11 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:27:12 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:27:12 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:27:42 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:27:42 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:29:09 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:29:09 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:29:28 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(76): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Thu, 09 Feb 2017 16:29:28 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(36): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed

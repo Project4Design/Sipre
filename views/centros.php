@@ -182,7 +182,7 @@ switch($opc):
       <div class="col-md-10 col-md-offset-1">
         <div class="box box-success">
           <div class="box-header">
-            <h3 class="box-title"><i class="fa <?=($id>0)? 'fa-pencil':'fa-user-plus'?>"></i> <?=($id>0)?'Modificar':'Agregar'?> Centro</h3><br>
+            <h3 class="box-title"><i class="fa <?=($id>0)? 'fa-pencil':'fa-plus'?>"></i> <?=($id>0)?'Modificar':'Agregar'?> Centro</h3><br>
           </div>
           <div class="box-body">
             <form class="form-horizontal" action="funciones/class.centros.php" id="fr-registro" method="post">
@@ -214,7 +214,7 @@ switch($opc):
               </div>
               
               <div class="col-md-4 col-md-offset-4">
-                <a href="?ver=usuarios" class="btn btn-flat btn-default"><i class="fa fa-reply"></i> Volver</a>
+                <a href="?ver=centros" class="btn btn-flat btn-default"><i class="fa fa-reply"></i> Volver</a>
                 <input id="b-registro" class="btn btn-flat btn-primary b-submit" type="submit" name="registrar" value="Guardar">
               </div>
             </form>    
@@ -232,6 +232,7 @@ switch($opc):
         <h3 class="box-title"><i class="fa fa-users"></i> Centros de votacion</h3>
         <div class="pull-right">
           <a class="btn btn-flat btn-sm btn-success" href="?ver=centros&opc=add"><i class="fa fa-user-plus" aria-hidden="true"></i> Agregar centro</a>
+           <a class="btn btn-flat btn-sm btn-danger" href="reportes/centros.php?action=centros"><i class="fa fa-print" aria-hidden="true"></i>  Imprimir centros</a>
         </div>
       </div>
       <div class="box-body">

@@ -84,6 +84,66 @@ foreach($elec as $e){
 
     $output = $this->pdf->build($body,$header,$footer);
     $this->pdf->out($output,$nombre);
+  }//
+
+  public function centrosVotacion()
+  {
+    $centro = $this->centros->consulta();
+
+
+
+      $nombre = "Centros";
+      $tbody = ""; $i = 1;
+      
+foreach($centro as $e){
+
+            if ($e->total == 0) {
+                $total= "No tiene electores";
+              }else{
+                $total = $e->total." Electores";
+              }
+       
+        $tbody .="
+        <tr>
+          <td class=\"center\">{$i}</td>
+          <td class=\"center\">{$e->cent_nombre}</td>
+          <td>{$total}</td>
+        </tr>
+        ";
+        $i++;
+      }
+ //$porcentaje_electores_centros = round($total->total*100/$totalc,2);
+
+      $body = "
+      <hr>
+      <h3 class=\"center\">Listado de electores</h3>
+      <table class=\"table\">
+        <thead style='background-color: skyblue'>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Cantidad de electores</th>
+            </tr>
+          </thead>
+        <tbody>
+          {$tbody}
+        </tbody>
+      </table>
+      ";
+
+   
+
+    $header = "<div class=\"col9\">
+                <p class=\"right\">Base de Datos Muicipio Sucre - Edo. Aragua
+                </p>
+              </div>
+              <div class=\"col3\">
+                <p class=\"right\" style=\"margin-top:0\">{$this->fecha}</p>
+              </div>";
+    $footer = "<div class=\"center\">La Información en este documento es de uso confidencial.</div>";
+
+    $output = $this->pdf->build($body,$header,$footer);
+    $this->pdf->out($output,$nombre);
   }//sh
 
 }//Pdf_sectores
@@ -95,6 +155,9 @@ if(isset($_GET['action'])):
     case 'centro':
       $id = $_GET['id'];
       $pdf->centros($id);
+    break;
+    case 'centros':
+    $pdf->centrosVotacion();
     break;
     default:
       return false;
