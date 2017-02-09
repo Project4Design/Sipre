@@ -764,3 +764,15 @@ You have an error in your SQL syntax; check the manual that corresponds to your 
 #2 C:\xampp\htdocs\sipre\reportes\electores.php(388): Pdf_electores->busqueda(Array, Array, 0, '17', '8', '28', Array)
 #3 {main}
 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '|| e.elec_profesion = ?)' at line 4
+[Wed, 08 Feb 2017 22:57:42 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(55): Query::prun('SELECT * FROM c...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(3): Centros->obtener(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed
+[Wed, 08 Feb 2017 22:57:42 -0400] #0 C:\xampp\htdocs\sipre\funciones\conex.php(85): ReflectionMethod->invokeArgs(Object(mysqli_stmt), Array)
+#1 C:\xampp\htdocs\sipre\funciones\class.centros.php(32): Query::prun('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\sipre\views\centros.php(7): Centros->totalElectores(0)
+#3 C:\xampp\htdocs\sipre\inicio.php(25): require_once('C:\\xampp\\htdocs...')
+#4 {main}
+Invocation of method mysqli_stmt::bind_param() failed

@@ -16,7 +16,10 @@ class Centros{
 
 	public function consulta()
 	{
-		$query = Query::run("SELECT * FROM centros");
+		$query = Query::run("SELECT c.*,COUNT(e.id_elector) AS total FROM centros AS c
+															LEFT JOIN electores AS e ON e.id_centro = c.id_centro
+															GROUP BY c.id_centro
+															ORDER BY total DESC");
 		$data = array();
 
 		while ($row = $query->fetch_array(MYSQLI_ASSOC)){
@@ -26,6 +29,7 @@ class Centros{
 		return $data;
 	}
 
+	
 	public function totalElectores($id)
 	{
 
@@ -41,9 +45,26 @@ class Centros{
 
 	}//obtener
 
-	public function totalCentros()
+	public function Electores($id)
 	{
-		$query = Query::run("SELECT COUNT(*) AS totalc FROM centros ");
+
+	$query = Query::prun("SELECT c.* , e.* FROM electores AS e INNER JOIN centros AS c ON c.id_centro = e.id_centro WHERE e.id_centro = ?",array("i",$id));
+    
+    if($query->result->num_rows >0){
+	    	$data = (object)$query->result->fetch_array(MYSQLI_ASSOC);
+		}else{
+			$data = NULL;
+		}
+
+	    return $data;
+
+	}//obtener
+
+	
+
+	public function totalEl()
+	{
+		$query = Query::run("SELECT COUNT(*) AS totalc FROM electores ");
 		$registro = (object) $query->fetch_array(MYSQLI_ASSOC);
 
    		return $registro->totalc;

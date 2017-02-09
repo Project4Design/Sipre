@@ -5,7 +5,8 @@ if($opc=="add_centro"){$li="Agregar";}elseif($opc=="edit"){$li="Editar";}elseif(
 
 //sacar porcentaje de este centro
 $total = $centros->totalElectores($id);
-$totalc = $centros->totalCentros();
+$totalc = $centros->totalEl();
+
 
 
 ?>
@@ -52,8 +53,11 @@ switch($opc):
   ?>
     <section>
       <a class="btn btn-flat btn-default" href="?ver=centros"><i class="fa fa-reply" aria-hidden="true"></i> Volver</a>
-      <a class="btn btn-flat btn-success" href="?ver=centros&opc=edit&id=<?=$id?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar Centro</a>
+      <a class="btn btn-flat btn-success" href="?ver=centros&opc=edit&id=<?=$id?>"><i class="fa fa-pencil" aria-hidden="true"></i>Modificar Centro</a>
+       <a class="btn btn-flat btn-danger" href=reportes/centros.php?&action=centro&id=<?=$id?>"><i class="fa fa-print" aria-hidden="true"></i> Imprimir</a>
+      <?php if($_SESSION['nivel'] == 'A'){?>
       <button class="btn btn-flat btn-danger" data-toggle="modal" data-target="#delModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar Centro</button>
+      <?php } ?>
     </section>
     
 
@@ -70,7 +74,7 @@ switch($opc):
       </div>
       
       <div class="col-md-7">
-                <h4>El porcentaje de electores en este centro es de:      <spam  style="font-size: 200%"><strong class="text-danger"> <?=round($total->total*100/$totalc,2)?>%</strong></spam></h4>
+                <h4>El porcentaje de electores en este centro es de:       <spam  style="font-size: 200%"><strong class="text-danger"> <?=round($total->total*100/$totalc,2)?>%</strong></spam></h4>
         <div class="box box-warning color-palette-box">
           <div class="box-header with-border">
             <h3 class="box-title"><i class="fa fa-address-book-o"></i> Electores registrados</h3>
@@ -103,6 +107,7 @@ switch($opc):
                   <td class="text-center">
                     <a class="btn btn-flat btn-primary btn-sm" href="?ver=electores&opc=ver&id=<?=$d->id_elector?>"><i class="fa fa-search"></i></a>
                     <a class="btn btn-flat btn-success btn-sm" href="?ver=electores&opc=edit&id=<?=$d->id_elector?>"><i class="fa fa-pencil"></i></a>
+                    <a class="btn btn-flat btn-danger btn-sm" href="reportes/electores.php?action=elector&id=<?=$d->id_elector?>"><i class="fa fa-print"></i></a>
                   </td>
                 </tr>
               <?
@@ -234,25 +239,35 @@ switch($opc):
           <thead>
             <tr>
               <th class="text-center">#</th>
-              <th class="text-center">Nombre</th
+              <th class="text-center">Nombre</th>
+              <th class="text-center">Cantidad de electores</th>
               <th class="text-center">Accion</th>
             </tr>
           </thead>
           <tbody>
           <? $i = 1;
             foreach ($centro as $c) {
+
+              if ($c->total == 0) {
+                $total= "No tiene electores";
+              }else{
+                $total = $c->total." Electores";
+              }
+              
           ?>
             <tr>
               <td class="text-center"><?=$i?></td>
               <td class="text-center"><?=$c->cent_nombre?></td>
+           
+              <td class="text-center"><strong><?=$total?></strong></td>
+             
               <td class="text-center">
                 <a class="btn btn-flat btn-primary btn-sm" href="?ver=centros&opc=ver&id=<?=$c->id_centro?>"><i class="fa fa-search"></i></a>
                 <a class="btn btn-flat btn-success btn-sm" href="?ver=centros&opc=edit&id=<?=$c->id_centro?>"><i class="fa fa-pencil"></i></a>
               </td>
             </tr>
           <?
-            $i++;
-            }
+            $i++;}
           ?>        
           </tbody>
         </table>
