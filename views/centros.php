@@ -3,6 +3,11 @@ $centros   = new Centros();
 $cen = $centros->obtener($id);
 if($opc=="add_centro"){$li="Agregar";}elseif($opc=="edit"){$li="Editar";}elseif($opc=="ver"){$li="Detalles";}else{$li="";}
 
+//sacar porcentaje de este centro
+$total = $centros->totalElectores($id);
+$totalc = $centros->totalCentros();
+
+
 ?>
   <style>
     .google-maps {
@@ -47,8 +52,8 @@ switch($opc):
   ?>
     <section>
       <a class="btn btn-flat btn-default" href="?ver=centros"><i class="fa fa-reply" aria-hidden="true"></i> Volver</a>
-      <a class="btn btn-flat btn-success" href="?ver=centros&opc=edit&id=<?=$id?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar</a>
-      <button class="btn btn-flat btn-danger" data-toggle="modal" data-target="#delModal"><i class="fa fa-user-times" aria-hidden="true"></i> Eliminar</button>
+      <a class="btn btn-flat btn-success" href="?ver=centros&opc=edit&id=<?=$id?>"><i class="fa fa-pencil" aria-hidden="true"></i> Modificar Centro</a>
+      <button class="btn btn-flat btn-danger" data-toggle="modal" data-target="#delModal"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar Centro</button>
     </section>
     
 
@@ -65,6 +70,7 @@ switch($opc):
       </div>
       
       <div class="col-md-7">
+                <h4>El porcentaje de electores en este centro es de:      <spam  style="font-size: 200%"><strong class="text-danger"> <?=round($total->total*100/$totalc,2)?>%</strong></spam></h4>
         <div class="box box-warning color-palette-box">
           <div class="box-header with-border">
             <h3 class="box-title"><i class="fa fa-address-book-o"></i> Electores registrados</h3>
@@ -85,6 +91,7 @@ switch($opc):
               <tbody>
               <? $i = 1;
               $elec = $centros->electoresByCentro($id);
+
                 foreach ($elec as $d) {
               ?>
                 <tr>
@@ -123,7 +130,8 @@ switch($opc):
                 <input type="hidden" name="id" value="<?=$id?>">
                 <input type="hidden" name="action" value="eliminar">
                 <div class="form-group">
-                  <h4 class="text-center">¿Esta seguro que des&eacute;a <b>Eliminar</b> este usuario?</h4><br>
+                  <h4 class="text-center">¿Esta seguro que des&eacute;a <b>Eliminar</b> este centro?</h4><br>
+                    <li><?=$cen->cent_nombre?></li>
                   <div class="progress" style="display:none">
                     <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
                     </div>

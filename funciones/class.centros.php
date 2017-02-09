@@ -26,6 +26,29 @@ class Centros{
 		return $data;
 	}
 
+	public function totalElectores($id)
+	{
+
+	$query = Query::prun("SELECT COUNT(*) AS total FROM electores WHERE id_centro = ? ORDER BY total DESC",array("i",$id));
+    
+    if($query->result->num_rows >0){
+	    	$data = (object)$query->result->fetch_array(MYSQLI_ASSOC);
+		}else{
+			$data = NULL;
+		}
+
+	    return $data;
+
+	}//obtener
+
+	public function totalCentros()
+	{
+		$query = Query::run("SELECT COUNT(*) AS totalc FROM centros ");
+		$registro = (object) $query->fetch_array(MYSQLI_ASSOC);
+
+   		return $registro->totalc;
+	}
+
 	public function obtener($id)
 	{
 
@@ -122,10 +145,17 @@ class Centros{
 
 	}//Modificar CENTROS
 
+
+
 	public function eliminar($id){
 
 			$query = Query::prun("SELECT * FROM centros WHERE id_centro = ? ",array("i",$id));
 
+			$query2 = Query::prun("SELECT * FROM electores WHERE id_centro = ?",array("i",$id));
+
+		if ($query2->result->num_rows>0) {
+			$this->rh->setResponse(false,"Este centro tiene electores registrados");
+		}else{
 			if($query->result->num_rows>0){
 				$query = Query::prun("DELETE FROM centros  WHERE id_centro = ?",array("i",$id));
 
@@ -138,6 +168,8 @@ class Centros{
 			}else{
 				$this->rh->setResponse(false,"Centro no encontrado");	
 			}
+
+		}
 		
 
 		echo json_encode($this->rh);

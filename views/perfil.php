@@ -5,28 +5,48 @@ $user = $usuarios->perfil();
 
 <div class="row">
 <div class="content">
- <div class="col-md-10 col-md-offset-1">
-    <h2 class="text-center"><?=$user->user_nombres?> <?=$user->user_apellidos?></h2>
+ 
+  <br>
+  <div class="col-md-10 col-md-offset-1">
+
+   <section class="perfil">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="page-header" style="margin-top:0!important">
+            <i class="fa fa-user" aria-hidden="true"></i> 
+            <?=$user->user_nombres?> <?=$user->user_apellidos?>
+            <small class="pull-right"><?=($user->user_nivel=="A")?'Administrador':'Colaborador'?></small>
+          </h1>
+        </div>
+        <div class="col-md-4">
+          <h4>Datos del usuario</h4>
+          <p><b>Nombres:</b> <?=$user->user_nombres?></p>
+          <p><b>Apellidos:</b> <?=$user->user_apellidos?></p>
+          <p><b>Cedula:</b> <?=$user->user_cedula?></p>
+          <p><b>Correo:</b> <?=$user->user_email?></p>
+          <p><b>Sexo:</b> <?=($user->user_sexo=="M")?'Masculino':'Femenino'?></p>
+          <p><b>Telefono:</b> <?=$user->user_telefono?></p>
+        </div>
+      </div>
+    </section>
+    <div class=" col-md-5">
+    <br>
     <button class="btn btn-danger" data-toggle="modal" data-target="#Modal-password">Cambiar contraseña</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button class="btn btn-warning" data-toggle="modal" data-target="#Modal-perfil">Modificar datos</button>
   </div>
-  <div class="box-shadow col-md-10 col-md-offset-1">
-    <div class="col-md-4">
-      <h4>Datos del usuario</h4>
-      <p><b>Nombres:</b> <?=$user->user_nombres?></p>
-      <p><b>Apellidos:</b> <?=$user->user_apellidos?></p>
-      <p><b>Correo:</b> <?=$user->user_email?></p>
-      <p><b>Sexo:</b> <?=($user->user_sexo=="M")?'Masculino':'Femenino'?></p>
-      <p><b>Telefono:</b> <?=$user->user_telefono?></p>
-    </div>
-    <div class="col-md-4">
-      <h4>&nbsp;</h4>
-      <p><b>Nivel:</b> <?=($user->user_nivel=="A")?'Administrador':'Usuario'?></p>
-      <p><b>Estado de la cuenta:</b> <?=($user->user_estado=="A")?'Activa':'Inactiva'?></p>
-    </div>
+      
   </div>
 </div>
 </div>
+
+<div class="row">
+        <div class="col-md-6 col-lg-offset-3">
+          
+
+             
+        </div>
+      </div>
 
   <!-- Modal de modificar -->
  <div class="modal fade" id="Modal-password" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
